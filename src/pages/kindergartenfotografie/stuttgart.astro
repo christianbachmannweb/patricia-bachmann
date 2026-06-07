@@ -1,0 +1,25 @@
+---
+import CityPage from '../../components/CityPage.astro';
+
+const faqs = [
+  { question: 'Fotografierst du auch in Stuttgart?', answer: 'Ja, ich bin regelmäßig im Raum Stuttgart unterwegs und fotografiere in Kindergärten und Grundschulen. Die Anfahrt ist für euch kostenlos.' },
+  { question: 'Wie läuft ein Fototag in einem Stuttgarter Kindergarten ab?', answer: 'Genauso wie überall: Ich komme mit meinem kompletten Set-Up, fotografiere jedes Kind einzeln und in Gruppen – einfühlsam und in kurzer Zeit. Erzieher müssen kaum etwas vorbereiten.' },
+  { question: 'Was kostet die Kindergartenfotografie in Stuttgart?', answer: 'Für die Einrichtung entstehen keine Kosten. Eltern bestellen ihre Lieblingsbilder erst im Nachgang online – ohne Vorabzahlung.' },
+  { question: 'Wie kommen wir als Eltern an Patricia als Fotografin?', answer: 'Ihr schlagt mich einfach im Elternbeirat vor oder nehmt direkt Kontakt auf. Ich sende euch gerne Infomaterial zum Weitergeben.' },
+  { question: 'Wann sind die Fotos fertig?', answer: 'In der Regel etwa 2 Wochen nach dem Fototag. Die Eltern bekommen dann einen QR-Code und können die Bilder über Fotograf.de ansehen und bestellen.' },
+];
+---
+
+<CityPage
+  city="Stuttgart"
+  citySlug="stuttgart"
+  lat={48.7758}
+  lng={9.1829}
+  intro="Patricia Bachmann fotografiert Kinder in Kindergärten und Grundschulen im Raum Stuttgart – einfühlsam, natürlich und DSGVO-konform."
+  beschreibung={`
+    <p>Als Kindergartenfotografin bin ich regelmäßig in Stuttgart und der umliegenden Region unterwegs. Ob Stadtteile wie Stuttgart-Mitte, Vaihingen, Zuffenhausen oder Bad Cannstatt – ich komme dorthin, wo eure Kinder sind.</p>
+    <p>Meine Bilder zeigen Kinder so wie sie wirklich sind: verspielt, lebendig, voller Persönlichkeit. Kein steifes Posieren – echte Momente für bleibende Erinnerungen.</p>
+    <p>Für Kindergärten und Schulen in Stuttgart ist der Ablauf denkbar einfach: Ich kümmere mich um alles. Erzieherinnen und Lehrer müssen kaum etwas vorbereiten.</p>
+  `}
+  faqs={faqs}
+/>

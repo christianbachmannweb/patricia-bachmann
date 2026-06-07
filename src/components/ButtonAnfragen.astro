@@ -1,0 +1,58 @@
+---
+interface Props {
+  label?: string;
+  href?: string;
+  class?: string;
+}
+const { label = 'Verfügbarkeit anfragen', href = '/kontakt', class: className } = Astro.props;
+---
+
+<a href={href} class:list={['btn-anfragen', className]}>
+  <div class="btn-anfragen--content">
+    <span class="btn-anfragen--label">{label}</span>
+    <img
+      src="/images/68eb6c8d50f03f9535e61da3_patricia-bachman-kindergartenfotografie-goeppingen.avif"
+      alt=""
+      class="btn-anfragen--image"
+      aria-hidden="true"
+      loading="eager"
+    />
+  </div>
+</a>
+
+<style>
+.btn-anfragen {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-text);
+  color: var(--color-white);
+  border-radius: 100px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.btn-anfragen:hover { opacity: 0.85; }
+
+.btn-anfragen--content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 1.25rem;
+}
+
+.btn-anfragen--label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.btn-anfragen--image {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+</style>

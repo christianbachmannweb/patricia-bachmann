@@ -1,0 +1,537 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import WhatsApp from '../components/WhatsApp.astro';
+import FAQ from '../components/FAQ.astro';
+import '../styles/global.css';
+import '@fontsource/ubuntu/400.css';
+import '@fontsource/ubuntu/500.css';
+import '@fontsource/ubuntu/700.css';
+import '@fontsource-variable/arima';
+
+const testimonials = [
+  {
+    name: 'Stefanie Weinmann',
+    role: 'Lehrerin',
+    quote: 'Patricia hat unglaubliche Arbeit geleistet. Innerhalb von 2 Tagen hat sie 60 Kinder fotografiert. Das Ergebnis war super.',
+    avatar: '/images/testimonials/68f10de1bec0cef973370b7f_stefanie-weinmann-google-bild.png',
+    rating: 5,
+  },
+  {
+    name: 'Verena Schneider',
+    role: 'Kindergartenleiterin',
+    quote: 'Einfach wunderschöne Fotos und ein liebevoller Umgang mit den Kindern! Vielen Dank ❤️❤️❤️',
+    avatar: '/images/testimonials/68f0ed8cb62e9a388777ee99_verena-schneider-image.png',
+    rating: 5,
+  },
+  {
+    name: 'Lena Braun',
+    role: 'Erzieherin',
+    quote: 'Patricia hat wunderschöne Bilder von den Kindern gemacht – man sieht direkt dass so viel Liebe im Detail steckt.',
+    avatar: '/images/testimonials/68f0ed4e2c9e5f3d70664147_lena-braun.png',
+    rating: 5,
+  },
+  {
+    name: 'Mia Kächelin',
+    role: 'Mutter',
+    quote: 'Wir sind einfach begeistert! Patricia ist eine unglaublich liebevolle und einfühlsame Fotografin – genau das, was man sich für Kinderfotos wünscht.',
+    avatar: '/images/testimonials/68f0eb41d86cfd97ef28bd27_unnamed.png',
+    rating: 5,
+  },
+  {
+    name: 'Julia Hahn',
+    role: 'Mutter',
+    quote: 'Wunderschöne natürliche Bilder meiner Kinder. Sehr empfehlenswert!',
+    avatar: '/images/testimonials/68f10ea57cb99c7f7619b756_julia-hahn-image.png',
+    rating: 5,
+  },
+  {
+    name: 'Jessica Beier',
+    role: 'Erzieherin',
+    quote: 'Patricia ist mega lieb und die Kinder haben sie sofort ins Herz geschlossen. Tolle Bilder!',
+    avatar: '/images/testimonials/68f10e6b39e9add4d0199e29_jessica-beier-image.png',
+    rating: 5,
+  },
+  {
+    name: 'Sunny Rose',
+    role: 'Mutter',
+    quote: 'Super nette Fotografin, die Kinder hatten viel Spaß und die Bilder sind wunderschön!',
+    avatar: '/images/testimonials/68f0ecd8cba6bac20da4b94a_sunny-rose-image.png',
+    rating: 5,
+  },
+  {
+    name: 'Franca Blauss',
+    role: 'Mutter',
+    quote: 'Liebevolle Fotografin mit tollem Auge für Details. Die Bilder unserer Kinder sind einfach wunderschön!',
+    avatar: '/images/testimonials/68f0edbadcfb6794271b7730_Franca-blauss-image.png',
+    rating: 5,
+  },
+];
+
+const faqs = [
+  { question: 'Sind die Bilder DSGVO konform?', answer: 'Ja. Alle Bilder werden in Deutschland gehostet. Ich arbeite über die Plattform Fotograf.de mit Firmensitz in Berlin. Sie bieten sichere Bezahlmethoden, sicheren Download und schnelle Verarbeitung.' },
+  { question: 'Dauern die Fotos lang?', answer: 'Aufgrund der Reife der Kinder und des Verständnisses gehen Schulbilder deutlich schneller als Kindergartenbilder. Deshalb kann ich an Schulen auch deutlich mehr Kinder an einem Tag fotografieren.' },
+  { question: 'Was kostet ein Shooting?', answer: 'Das Shooting ist ohne Kosten für die Schule und zunächst auch ohne Kosten für die Eltern. Vorab ist kein Geld zu entrichten. Die Eltern können im Nachgang die Bilder online einsehen und einzeln oder über Pakete bestellen.' },
+  { question: 'Wann werden die Fotos geliefert?', answer: 'In aller Regel dauert die Bearbeitung ein bis zwei Wochen. Dann sind die Bilder als Upload im Onlineportal verfügbar und die Eltern bekommen via E-Mail eine Erinnerung.' },
+  { question: 'Müssen Lehrer oder die Schule etwas vorbereiten?', answer: 'In aller Regel bringe ich alles mit. Es ist aber nie von Nachteil, wenn die Schüler entsprechend vorbereitet werden und das Ganze durch eine Begleitperson organisiert wird.' },
+];
+
+const heroImages = [
+  '68fdf8f5c5066938e747a02a_photo-2025-10-22-10-27-55-2.avif',
+  '68fdf8f5eb82e8017099a60c_PHOTO-2025-10-22-10-27-54-2.avif',
+  '68fdf8f5e79a1b8bcd591a8e_PHOTO-2025-10-22-10-27-56-3.avif',
+  '68fdf8f565e23b84dc4d427e_PHOTO-2025-10-22-10-27-55.avif',
+  '68fdf8f5309d6ced6a86a9ec_photo-2025-10-22-10-27-55-3.avif',
+  '68fdf8f5c4cb7cec3af1423c_photo-2025-10-22-10-27-56-4.avif',
+  '68fdf8f5e6a825faf56b694b_PHOTO-2025-10-22-10-27-54.avif',
+  '68f68f4ae1996d2c9ea33683_Vavrova-Photography-116-von-250.avif',
+];
+---
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schulfotografin Göppingen – Natürliche Schulfotos | Patricia Bachmann</title>
+  <meta name="description" content="Kindgerechte Schulfotografie im Raum Göppingen. Schnelle Abläufe, DSGVO-konform, online bestellbar. Jetzt Verfügbarkeit anfragen!" />
+  <link rel="canonical" href="https://www.patricia-bachmann.de/schulfotografie" />
+  <meta name="robots" content="index, follow" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.patricia-bachmann.de/schulfotografie" />
+  <meta property="og:title" content="Schulfotografin Göppingen – Patricia Bachmann" />
+  <meta property="og:description" content="Kindgerechte Schulfotografie im Raum Göppingen. Schnelle Abläufe, DSGVO-konform, online bestellbar." />
+  <meta property="og:image" content="https://www.patricia-bachmann.de/images/68f5d97ee5fc6b9192115130_Vavrova-Photography-1.jpg" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="Patricia Bachmann Kindergartenfotografie" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Schulfotografin Göppingen – Patricia Bachmann" />
+  <meta name="twitter:description" content="Kindgerechte Schulfotografie im Raum Göppingen. Schnelle Abläufe, DSGVO-konform, online bestellbar." />
+  <meta name="twitter:image" content="https://www.patricia-bachmann.de/images/68f5d97ee5fc6b9192115130_Vavrova-Photography-1.jpg" />
+  <link rel="icon" href="/images/68f693e4a34b49b0779b4f31_favicon-32x32.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/images/68f6942db4d0e09d8a747738_webclip-patricia-bachmann.png" />
+  <!-- Schema: Service -->
+  <script type="application/ld+json" is:inline>{JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.patricia-bachmann.de/schulfotografie#service",
+    "name": "Schulfotografie",
+    "serviceType": "Schulfotografie",
+    "description": "Kindgerechte Schulfotos für Grundschulen in Göppingen, Stuttgart, Ulm und Umgebung.",
+    "provider": { "@type": "LocalBusiness", "@id": "https://www.patricia-bachmann.de/#business", "name": "Patricia Bachmann Kindergartenfotografie" },
+    "areaServed": [
+      {"@type": "City", "name": "Göppingen"},
+      {"@type": "City", "name": "Stuttgart"},
+      {"@type": "City", "name": "Ulm"},
+      {"@type": "City", "name": "Esslingen am Neckar"},
+      {"@type": "City", "name": "Kirchheim unter Teck"},
+      {"@type": "City", "name": "Geislingen an der Steige"},
+      {"@type": "City", "name": "Schwäbisch Gmünd"}
+    ],
+    "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Schulfotografie Pakete", "url": "https://www.patricia-bachmann.de/pakete" }
+  })}</script>
+  <!-- Schema: FAQPage -->
+  <script type="application/ld+json" is:inline>{JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Sind die Bilder DSGVO konform?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Alle Bilder werden in Deutschland gehostet. Ich arbeite über die Plattform Fotograf.de mit Firmensitz in Berlin. Sie bieten sichere Bezahlmethoden, sicheren Download und schnelle Verarbeitung." } },
+      { "@type": "Question", "name": "Dauern die Fotos lang?", "acceptedAnswer": { "@type": "Answer", "text": "Aufgrund der Reife der Kinder gehen Schulbilder deutlich schneller als Kindergartenbilder. Deshalb kann ich an Schulen auch deutlich mehr Kinder an einem Tag fotografieren." } },
+      { "@type": "Question", "name": "Was kostet ein Shooting?", "acceptedAnswer": { "@type": "Answer", "text": "Das Shooting ist ohne Kosten für die Schule und zunächst auch ohne Kosten für die Eltern. Vorab ist kein Geld zu entrichten. Die Eltern können im Nachgang die Bilder online einsehen und einzeln oder über Pakete bestellen." } },
+      { "@type": "Question", "name": "Wann werden die Fotos geliefert?", "acceptedAnswer": { "@type": "Answer", "text": "In aller Regel dauert die Bearbeitung ein bis zwei Wochen. Dann sind die Bilder im Onlineportal verfügbar und die Eltern bekommen via E-Mail eine Erinnerung." } },
+      { "@type": "Question", "name": "Müssen Lehrer oder die Schule etwas vorbereiten?", "acceptedAnswer": { "@type": "Answer", "text": "In aller Regel bringe ich alles mit. Es ist aber nie von Nachteil, wenn die Schüler entsprechend vorbereitet werden und das Ganze durch eine Begleitperson organisiert wird." } }
+    ]
+  })}</script>
+</head>
+<body>
+  <Nav />
+
+  <!-- ── Hero ── -->
+  <div class="hero-section">
+    <div class="startseite_hero-header-sektion_component">
+      <!-- Text-Block -->
+      <div class="hero-text-block padding-global">
+        <div class="max-width-large">
+          <div class="eyebrow margin-bottom margin-xsmall scroll-reveal">
+            <div class="eyebrow-bg"></div>
+            <p class="text-style-tagline">Schulfotografie</p>
+          </div>
+          <h1 class="heading-style-h1 scroll-reveal">Schulfotografin Göppingen</h1>
+          <p class="hero-sub scroll-reveal">Hi, ich heiße Patricia und fotografiere Schulkinder ab der ersten Klasse.</p>
+          <div class="button-group is-center scroll-reveal">
+            <a href="/kontakt" class="button">
+              <div class="button--content">
+                <span>Verfügbarkeit Anfragen</span>
+                <img src="/images/68eb6c8d50f03f9535e61da3_patricia-bachman-kindergartenfotografie-goeppingen.avif" alt="" class="button--image" />
+              </div>
+            </a>
+            <a href="/pakete" class="button is-link">
+              <span>Pakete &amp; Preise</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bilder + Gopher -->
+      <div class="gopher-wrapper">
+        <img src="/images/gopher-schule-schultuete.avif" alt="" class="gopher" loading="eager" aria-hidden="true" />
+        <div class="startseite_hero-header-sektion_images-layout">
+          <!-- Reihe 1 (scrollt links) -->
+          <div class="startseite_hero-header-sektion_image-list-top" id="hero-grid-top">
+            {[0, 1].map((copy) => (
+              <div class="startseite_hero-header-sektion_image-list">
+                {heroImages.slice(0, 4).map((img, i) => (
+                  <div class="startseite_hero-header-sektion_image-wrapper">
+                    <img src={`/images/${img}`} alt="Schulfoto" class="startseite_hero-header-sektion_image" fetchpriority={copy === 0 && i === 0 ? 'high' : undefined} loading={copy === 0 && i === 0 ? 'eager' : 'lazy'} />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+          <!-- Reihe 2 (scrollt rechts) -->
+          <div class="startseite_hero-header-sektion_image-list-bottom" id="hero-grid-bottom">
+            {[0, 1].map(() => (
+              <div class="startseite_hero-header-sektion_image-list">
+                {heroImages.slice(4, 8).map((img) => (
+                  <div class="startseite_hero-header-sektion_image-wrapper">
+                    <img src={`/images/${img}`} alt="Schulfoto" class="startseite_hero-header-sektion_image" loading="lazy" />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Über uns / USPs ── -->
+  <section class="section_kindergartenfotografie_uber-uns-sektion padding-section-large">
+    <div class="section-cloud-top is-flipped" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1797 332" fill="none" class="cloud-svg"><ellipse cx="220.364" cy="162.12" rx="60.3546" ry="50.9812" fill="currentColor"/><ellipse cx="280.719" cy="157.557" rx="60.3546" ry="71.334" fill="currentColor"/><ellipse cx="366.286" cy="162.12" rx="60.3546" ry="50.9812" fill="currentColor"/><ellipse cx="401.428" cy="191.566" rx="60.3546" ry="50.9812" fill="currentColor"/><ellipse cx="451.173" cy="159.247" rx="84.8875" ry="69.6439" fill="currentColor"/><ellipse cx="559.432" cy="167.512" rx="72.4365" ry="75.0354" fill="currentColor"/><ellipse cx="633.71" cy="152.789" rx="72.4365" ry="60.3126" fill="currentColor"/><ellipse cx="473.865" cy="219.56" rx="72.4365" ry="60.3126" fill="currentColor"/><ellipse cx="723.992" cy="182.235" rx="92.1234" ry="60.3126" fill="currentColor"/><ellipse cx="823.483" cy="184.434" rx="92.1234" ry="76.168" fill="currentColor"/><ellipse cx="833.412" cy="111.139" rx="92.1234" ry="76.168" fill="currentColor"/><ellipse cx="908.238" cy="115.398" rx="92.1234" ry="76.168" fill="currentColor"/><ellipse cx="915.606" cy="220.286" rx="92.1234" ry="83.3523" fill="currentColor"/><ellipse cx="1201.96" cy="269.533" rx="63.5919" ry="56.4319" fill="currentColor"/><ellipse cx="1206.73" cy="173.077" rx="123.562" ry="96.4562" fill="currentColor"/><ellipse cx="1350.86" cy="176.232" rx="123.562" ry="103.641" fill="currentColor"/><path d="M1552.65 128.807C1552.65 169.31 1514.32 202.145 1467.04 202.145C1419.75 202.145 1381.42 169.31 1381.42 128.807C1381.42 88.303 1419.75 55.4684 1467.04 55.4684C1514.32 55.4684 1552.65 88.303 1552.65 128.807Z" fill="currentColor"/><ellipse cx="1498.72" cy="257.772" rx="85.612" ry="73.3383" fill="currentColor"/><ellipse cx="1578.2" cy="196.195" rx="85.612" ry="73.3383" fill="currentColor"/><ellipse cx="1593.17" cy="136.934" rx="85.612" ry="73.3383" fill="currentColor"/><ellipse cx="1631.68" cy="242.547" rx="85.612" ry="73.3383" fill="currentColor"/><ellipse cx="1007.73" cy="136.934" rx="92.1234" ry="76.168" fill="currentColor"/><ellipse cx="1063.54" cy="76.621" rx="92.1234" ry="76.168" fill="currentColor"/><ellipse cx="1138.37" cy="205.596" rx="92.1234" ry="83.6737" fill="currentColor"/><ellipse cx="1063.54" cy="213.102" rx="92.1234" ry="76.168" fill="currentColor"/><ellipse cx="706.147" cy="140.585" rx="92.1234" ry="76.168" fill="currentColor"/><ellipse cx="584.083" cy="76.621" rx="70.8567" ry="76.168" fill="currentColor"/><ellipse cx="443.938" cy="115.398" rx="92.1234" ry="76.168" fill="currentColor"/><ellipse cx="334.754" cy="106.067" rx="92.1234" ry="76.168" fill="currentColor"/><ellipse cx="213.808" cy="76.621" rx="92.1234" ry="76.168" fill="currentColor"/><ellipse cx="135.534" cy="182.235" rx="92.1234" ry="76.168" fill="currentColor"/><ellipse cx="1710.61" cy="146.948" rx="85.612" ry="73.3383" fill="currentColor"/><ellipse cx="92.8766" cy="96.9092" rx="92.1234" ry="76.168" fill="currentColor"/></svg></div>
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="kita-uber-uns__content">
+          <div class="kindergartenfotografie_uber-uns-sektion_content-left">
+            <div class="eyebrow margin-bottom margin-xsmall scroll-reveal">
+              <div class="eyebrow-bg"></div>
+              <p class="text-style-tagline">Über mich</p>
+            </div>
+            <h2 class="heading-style-h2 scroll-reveal">Schulbilder neu gedacht</h2>
+            <p class="uber-sub scroll-reveal">Schöne Set-Ups – Schnelle Bildbearbeitung</p>
+            <p class="uber-text scroll-reveal">
+              Schluss mit langweiligen grauen Hintergründen. Schöne Set-Ups treffen den Stil
+              der Kinder und machen Schulbilder zu etwas, worauf sich Kinder und Eltern freuen.
+            </p>
+            <div class="kindergartenfotografie_uber-uns-sektion_item-list">
+              {[
+                { title: 'Datenschutzkonform', text: 'Alle Daten und Bilder werden sicher und DSGVO-konform über Fotograf.de verarbeitet.' },
+                { title: 'Schnelle Bildbearbeitung', text: 'Schulbilder sind in der Regel innerhalb 1–2 Wochen im Onlineportal verfügbar.' },
+                { title: 'Onlineportal / Sichere Bezahlung', text: 'Eltern können Bilder selbst einsehen und über verschiedene Pakete bestellen.' },
+              ].map(item => (
+                <div class="kindergartenfotografie_uber-uns-sektion_item scroll-reveal">
+                  <div class="kindergartenfotografie_uber-uns-sektion_item-icon-wrapper">
+                    <span class="usp-check">✓</span>
+                  </div>
+                  <div class="kindergartenfotografie_uber-uns-sektion_item-text-wrapper">
+                    <h4 class="heading-style-h6">{item.title}</h4>
+                    <p>{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <a href="/pakete" class="button is-link scroll-reveal" style="margin-top:1.5rem;">Mehr zum Prozess →</a>
+          </div>
+          <div class="kindergartenfotografie_uber-uns-sektion_image-wrapper scroll-reveal">
+            <img
+              src="/images/68f68f4afaf2bd81bdb18c89_Vavrova-Photography-105-von-250.avif"
+              alt="Schulfotografie – moderne Schulporträts"
+              class="uber-uns-image"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <!-- Fotograf.de Screenshot -->
+        <div class="platform-screenshot scroll-reveal">
+          <img
+            src="/images/69020e06441ace3302f9a66f_bildschirmfoto-2025-10-19-um-09-29-54.avif"
+            alt="Fotograf.de Kundenportal – Sichere Bildbestellung"
+            class="platform-img"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Zeitleiste / Ablauf ── -->
+  <section class="section_kindergartenfotografie_zeitleiste-sektion padding-section-large">
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="eyebrow margin-bottom margin-xsmall scroll-reveal">
+          <div class="eyebrow-bg"></div>
+          <p class="text-style-tagline">Ablauf</p>
+        </div>
+        <h2 class="heading-style-h2 scroll-reveal">Wie komme ich in eure Schule?</h2>
+        <div class="zeitleiste-grid">
+          {[
+            {
+              n: '1',
+              title: 'Schulleitung informieren',
+              text: 'Ihr als Eltern könnt die Schulleitung darüber informieren, dass ihr eine Schulfotografin gefunden habt. So kommt der erste Kontakt zustande.',
+              img: '68fdf8f5309d6ced6a86a9ec_photo-2025-10-22-10-27-55-3.avif',
+            },
+            {
+              n: '2',
+              title: 'Verfügbarkeit klären',
+              text: 'Mit der Schulleitung kläre ich dann die Termine und Verfügbarkeiten ab. Außerdem bespreche ich den genauen Ablauf am Fototag.',
+              img: '68fdf8f5c4cb7cec3af1423c_photo-2025-10-22-10-27-56-4.avif',
+            },
+            {
+              n: '3',
+              title: 'Fototag',
+              text: 'Morgens baue ich das Set-Up auf. Die Schüler sind aufgrund ihrer Reife deutlich schneller zu fotografieren – so schaffe ich an Schulen auch deutlich mehr Kinder.',
+              img: '68fdf8f5e6a825faf56b694b_PHOTO-2025-10-22-10-27-54.avif',
+            },
+          ].map(step => (
+            <div class="zeitleiste-item scroll-reveal">
+              <div class="zeitleiste-image-wrapper">
+                <img src={`/images/${step.img}`} alt={step.title} class="zeitleiste-image" loading="lazy" />
+              </div>
+              <div class="zeitleiste-text">
+                <span class="zeitleiste-num">{step.n}</span>
+                <h3 class="heading-style-h5">{step.title}</h3>
+                <p>{step.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Testimonials ── -->
+  <section class="section_kindergartenfotografie_testimonial padding-section-large">
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="kita-testi-header">
+          <div>
+            <div class="eyebrow margin-bottom margin-xsmall scroll-reveal">
+              <div class="eyebrow-bg"></div>
+              <p class="text-style-tagline">Bewertungen</p>
+            </div>
+            <h2 class="heading-style-h2 scroll-reveal">Schul- &amp; Elternfeedback</h2>
+            <p class="scroll-reveal">Das sagen Schulen, Kindergärten und Eltern über die Google-Bewertungen zu meiner Arbeit.</p>
+          </div>
+          <a href="/kontakt" class="button scroll-reveal">
+            <div class="button--content">
+              <span>Verfügbarkeit anfragen</span>
+              <img src="/images/68eb6c8d50f03f9535e61da3_patricia-bachman-kindergartenfotografie-goeppingen.avif" alt="" class="button--image" />
+            </div>
+          </a>
+        </div>
+        <div class="kita-testi-grid">
+          {testimonials.map(t => (
+            <div class="kita-testi-card scroll-reveal">
+              <div class="kita-testi-stars">{'★'.repeat(t.rating)}</div>
+              <p class="kita-testi-quote">"{t.quote}"</p>
+              <div class="kita-testi-client">
+                <img src={t.avatar} alt={t.name} class="kita-testi-avatar" loading="lazy" />
+                <div>
+                  <strong>{t.name}</strong>
+                  <span>{t.role}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="section_kindergartenfotografie_cta-sektion">
+    <div class="kindergartenfotografie_cta-sektion_component">
+      <div class="kindergartenfotografie_cta-sektion_image-wrapper">
+        <img
+          src="/images/6901d36f884ecca6b8de2e7e_vavrova-photography-61-von-78.avif"
+          alt="Schulfotografie"
+          class="kita-cta-image"
+          loading="lazy"
+        />
+        <div class="kita-cta-overlay"></div>
+      </div>
+      <div class="kita-cta-content">
+        <h2 class="heading-style-h2 scroll-reveal">Lust auf moderne und wertvolle Schulbilder?</h2>
+        <p class="scroll-reveal">Gerne komme ich auch an eure Schule und fotografiere eure Kinder in einem schönen Set-Up. Stellt mich gern der Schulleitung vor.</p>
+        <a href="/kontakt" class="button is-alternate scroll-reveal" style="margin-top:1.5rem; display:inline-flex;">
+          <div class="button--content">
+            <span>Jetzt Verfügbarkeit anfragen</span>
+            <img src="/images/68eb6c8d50f03f9535e61da3_patricia-bachman-kindergartenfotografie-goeppingen.avif" alt="" class="button--image" />
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ (Komponente) ── -->
+  <FAQ eyebrow="FAQ" heading="Häufig gestellte Fragen" faqs={faqs} />
+
+  <WhatsApp />
+
+  <Footer />
+</body>
+</html>
+
+<style>
+/* Shared layout helpers (same as index) */
+.padding-global { padding-left: var(--pad-x); padding-right: var(--pad-x); }
+.container-large { width: 100%; max-width: 80rem; margin: 0 auto; }
+.padding-section-large { padding-top: 7rem; padding-bottom: 7rem; }
+.eyebrow { position: relative; display: inline-flex; padding: 0.3rem 0.45rem 0.2375rem 0.5rem; justify-content: center; align-items: center; margin-bottom: 1rem; }
+.eyebrow-bg { position: absolute; inset: 0%; z-index: 0; border-style: solid; border-width: 0.5px; border-color: #f4b8ce; border-radius: 0.3rem; background-color: rgba(255, 198, 218, 0.16); }
+.text-style-tagline { position: relative; z-index: 1; display: inline-block; font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #b06080; text-decoration: none; }
+.heading-style-h1 { font-family: var(--font-heading); font-size: clamp(2.4rem,5vw,4rem); letter-spacing:-0.05em; font-weight:400; line-height:1.15; }
+.heading-style-h2 { font-family: var(--font-heading); font-size: clamp(1.9rem,4vw,3.25rem); letter-spacing:-0.02em; font-weight:400; line-height:1.2; }
+.heading-style-h5 { font-family: var(--font-heading); font-size: 1.75rem; font-weight:300; line-height:1.4; }
+.heading-style-h6 { font-family: var(--font-heading); font-size: 1.375rem; font-weight:400; line-height:1.4; }
+
+.button { display:inline-flex; align-items:center; gap:0.5rem; border:1px solid var(--color-glacier-dark); background-color:var(--color-glacier); color:var(--color-text); border-radius:10px; padding:0.175rem 0.175rem 0.175rem 1.5rem; font-family:var(--font-body); font-weight:500; text-decoration:none; transition:border-color 0.2s, background-color 0.6s; cursor:pointer; }
+.button:hover { background-image: linear-gradient(135deg, #e6eff3, #6b8c9e); }
+.button--content { display:flex; align-items:center; gap:0.5rem; }
+.button--image { width:2.25rem; height:2.25rem; border-radius:50%; object-fit:cover; flex-shrink:0; }
+.button.is-alternate { background-color:var(--color-text); color:var(--color-white); border-color:transparent; }
+.button.is-alternate:hover { background-image:none; background-color:var(--color-text-mid); }
+.button.is-link { background:none; border:none; padding:0.25rem 0; }
+.button.is-link:hover { text-decoration:underline; background-image:none; }
+
+/* ── Hero (Startseiten-Stil, Sandy-BG) ── */
+.hero-section { background: var(--color-sandy); overflow: hidden; }
+.startseite_hero-header-sektion_component { display: flex; flex-direction: column; align-items: center; }
+.hero-text-block { width: 100%; text-align: center; padding-top: 8rem; padding-bottom: 3rem; }
+.hero-text-block .eyebrow { justify-content: center; }
+.max-width-large { max-width: 48rem; margin: 0 auto; }
+.hero-sub { font-size: 1.05rem; color: var(--color-text-mid); margin-top: 1.25rem; line-height: 1.7; }
+.button-group { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-top: 2rem; }
+.button-group.is-center { justify-content: center; margin-top: 1.75rem; }
+
+.gopher-wrapper { position: relative; width: 100%; }
+.gopher { position: absolute; inset: -11% 0% auto 26%; width: 5.625rem; cursor: pointer; transition: top 600ms ease; }
+.gopher:hover { top: -16%; }
+
+.startseite_hero-header-sektion_images-layout { width: 100%; overflow: hidden; display: flex; flex-direction: column; gap: 1rem; padding-bottom: 5rem; }
+.startseite_hero-header-sektion_image-list-top,
+.startseite_hero-header-sektion_image-list-bottom { display: flex; will-change: transform; }
+.startseite_hero-header-sektion_image-list { display: grid; grid-auto-flow: column; grid-auto-columns: 18rem; gap: 1rem; flex-shrink: 0; padding-right: 1rem; }
+.startseite_hero-header-sektion_image-wrapper { border-radius: 8px; width: 18rem; padding-top: 75%; position: relative; overflow: hidden; }
+.startseite_hero-header-sektion_image { object-fit: cover; width: 100%; height: 100%; position: absolute; inset: 0; }
+@media (max-width: 991px) {
+  .startseite_hero-header-sektion_image-list { grid-auto-columns: 60vw; }
+  .startseite_hero-header-sektion_image-wrapper { width: 60vw; }
+}
+@media (max-width: 767px) { .gopher { left: 6%; top: -9%; } }
+@media (max-width: 479px) { .gopher { top: -15%; } .gopher:hover { top: -26%; } }
+
+/* ── Über uns ── */
+.section_kindergartenfotografie_uber-uns-sektion { background: var(--color-bg); }
+.section_kindergartenfotografie_uber-uns-sektion { position: relative; }
+.section_kindergartenfotografie_uber-uns-sektion > .padding-global { position: relative; z-index: 1; }
+/* Cloud-Übergang — gleiche CSS wie Startseite (.section-cloud-top + .cloud-svg) */
+.section-cloud-top { position: absolute; inset: -10% 0% auto; z-index: 0; overflow: hidden; pointer-events: none; line-height: 0; }
+.section-cloud-top.is-flipped { transform: scaleY(-1); }
+@media (min-width: 1920px) { .section-cloud-top { top: -19%; } }
+@media (max-width: 991px) { .section-cloud-top { top: -6%; } }
+@media (max-width: 767px) { .section-cloud-top { top: -4%; } }
+@media (max-width: 479px) { .section-cloud-top { top: -2%; } }
+.cloud-svg { display: block; width: 100%; color: var(--color-bg-2); }
+.kita-uber-uns__content { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-bottom: 4rem; }
+.uber-sub { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 300; color: var(--color-text-mid); margin-bottom: 1rem; }
+.uber-text { color: var(--color-text-mid); line-height: 1.7; margin-bottom: 2rem; }
+.kindergartenfotografie_uber-uns-sektion_item-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.kindergartenfotografie_uber-uns-sektion_item { display: flex; gap: 1rem; align-items: flex-start; }
+.kindergartenfotografie_uber-uns-sektion_item-icon-wrapper {
+  width: 2rem; height: 2rem; background: var(--color-bg-3); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.2rem;
+}
+.usp-check { color: var(--color-glacier-dark); font-weight: 700; }
+.kindergartenfotografie_uber-uns-sektion_item-text-wrapper h4 { margin-bottom: 0.25rem; }
+.kindergartenfotografie_uber-uns-sektion_item-text-wrapper p { color: var(--color-text-mid); font-size: 0.9rem; }
+.kindergartenfotografie_uber-uns-sektion_image-wrapper { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; }
+.uber-uns-image { width: 100%; height: 100%; object-fit: cover; }
+.platform-screenshot { max-width: 720px; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+.platform-img { width: 100%; display: block; }
+
+/* ── Zeitleiste ── */
+.section_kindergartenfotografie_zeitleiste-sektion { background: var(--color-bg-2); }
+.section_kindergartenfotografie_zeitleiste-sektion h2 { margin-bottom: 3rem; }
+.zeitleiste-grid { display: flex; flex-direction: column; gap: 4rem; }
+.zeitleiste-item { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.zeitleiste-item:nth-child(even) { direction: rtl; }
+.zeitleiste-item:nth-child(even) > * { direction: ltr; }
+.zeitleiste-image-wrapper { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; }
+.zeitleiste-image { width: 100%; height: 100%; object-fit: cover; }
+.zeitleiste-text { display: flex; flex-direction: column; gap: 0.75rem; }
+.zeitleiste-num {
+  font-family: var(--font-heading); font-size: 4rem; font-weight: 300;
+  color: var(--color-border); line-height: 1; display: block;
+}
+.zeitleiste-text p { color: var(--color-text-mid); line-height: 1.7; }
+
+/* ── Testimonials ── */
+.section_kindergartenfotografie_testimonial { background: var(--color-bg); }
+.kita-testi-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; gap: 2rem; flex-wrap: wrap; }
+.kita-testi-header p { color: var(--color-text-mid); margin-top: 0.5rem; }
+.kita-testi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.kita-testi-card { background: var(--color-white); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+.kita-testi-stars { color: #f59e0b; font-size: 1rem; }
+.kita-testi-quote { font-family: var(--font-heading); font-size: 0.95rem; font-style: italic; line-height: 1.5; flex: 1; }
+.kita-testi-client { display: flex; align-items: center; gap: 0.75rem; }
+.kita-testi-avatar { width: 2.5rem; height: 2.5rem; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.kita-testi-client strong { display: block; font-size: 0.875rem; }
+.kita-testi-client span { display: block; font-size: 0.75rem; color: var(--color-text-mid); }
+
+/* ── CTA ── */
+.section_kindergartenfotografie_cta-sektion { overflow: hidden; }
+.kindergartenfotografie_cta-sektion_component { position: relative; min-height: 28rem; display: flex; align-items: center; }
+.kindergartenfotografie_cta-sektion_image-wrapper { position: absolute; inset: 0; }
+.kita-cta-image { width: 100%; height: 100%; object-fit: cover; }
+.kita-cta-overlay { position: absolute; inset: 0; background: rgba(13,12,10,0.55); }
+.kita-cta-content { position: relative; z-index: 2; color: #fff; padding: 5rem var(--pad-x); max-width: 52rem; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.kita-cta-content h2 { color: #fff; margin-bottom: 1rem; }
+.kita-cta-content p { color: rgba(255,255,255,0.8); }
+
+
+
+/* ── Responsive ── */
+@media (max-width: 991px) {
+  .kita-uber-uns__content { grid-template-columns: 1fr; gap: 3rem; }
+  .zeitleiste-item { grid-template-columns: 1fr; gap: 2rem; }
+  .zeitleiste-item:nth-child(even) { direction: ltr; }
+  .kita-testi-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .padding-section-large { padding-top: 4rem; padding-bottom: 4rem; }
+  .kita-testi-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray<HTMLElement>('.scroll-reveal').forEach(el => {
+  gsap.from(el, {
+    opacity: 0, y: 28, duration: 0.75, ease: 'power3.out',
+    scrollTrigger: { trigger: el, start: 'top 88%' },
+  });
+});
+
+// Hero-Marquee (wie Startseite): Reihe 1 nach links, Reihe 2 nach rechts
+const heroTop = document.getElementById('hero-grid-top') as HTMLElement | null;
+const heroBottom = document.getElementById('hero-grid-bottom') as HTMLElement | null;
+if (heroTop) gsap.to(heroTop, { x: () => -(heroTop.scrollWidth / 2), duration: 35, ease: 'none', repeat: -1 });
+if (heroBottom) gsap.fromTo(heroBottom, { x: () => -(heroBottom.scrollWidth / 2) }, { x: 0, duration: 30, ease: 'none', repeat: -1 });
+</script>

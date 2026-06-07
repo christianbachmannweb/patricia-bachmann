@@ -1,0 +1,98 @@
+# ═══════════════════════════════════════════════════
+# STARTSEITE — Alle Texte
+# Hier kannst du alle Texte der Startseite bearbeiten.
+# Speichern → Seite wird beim nächsten Build automatisch aktualisiert.
+# ═══════════════════════════════════════════════════
+
+
+# ── HERO ────────────────────────────────────────────
+hero:
+  h1: "Kindergartenfotografin & Schulfotografin in Göppingen"
+  h1_sub: "Natürliche Kindergartenfotografie & Schulfotografie"
+  subtext: "Einfühlsame, authentische Kinderfotos für Kitas und Grundschulen — unkompliziert für Erzieher*innen & Lehrkräfte, wertvoll für Eltern."
+  button_anfragen: "Verfügbarkeit Anfragen"
+  button_pakete: "Pakete & Preise"
+
+
+# ── ANGEBOT ─────────────────────────────────────────
+angebot:
+  eyebrow: "Angebot"
+  heading: "Fotograf für Kindergärten und Schulen im Raum Göppingen"
+  subtext: "Als Kindergartenfotografin und Schulfotografin bin ich in Kitas und Grundschulen unterwegs. Auf den Unterseiten erkläre ich dir genau, wie der Ablauf bei mir ist."
+  kita:
+    heading: "Kindergartenfotografie"
+    text: "Natürliche Gruppen- und Portraitfotos. Ich arbeite einfühlsam mit den Kindern und sorge für einen reibungslosen Ablauf für das Team."
+    button: "Kindergartenfotografie →"
+  schule:
+    heading: "Schulfotografie"
+    text: "Schulfotos, Klassenfotos und individuelle Portraits – organisiert, schnell und kindgerecht umgesetzt."
+    button: "Schulfotografie →"
+
+
+# ── ABLAUF ──────────────────────────────────────────
+ablauf:
+  eyebrow: "Der Ablauf"
+  heading: "So komme ich auch in euren Kindergarten oder eure Schule"
+  subtext: "Ihr möchtet einen neuen Kindergartenfotograf oder einen neuen Schulfotograf? <strong>Ihr als Eltern</strong> könnt mich in der Einrichtung vorschlagen. Dazu sende ich euch auch gern Infomaterial."
+  schritte:
+    - titel: "Gespräch vereinbaren"
+      text: "In einem Gespräch klären wir ab, um welchen Kindergarten oder Schule es sich handelt. Wieviele Kinder, grobes Datum etc."
+    - titel: "Verfügbarkeit klären"
+      text: "In aller Regel wird die Wahl des Fotografen im Elternbeirat abgestimmt. Die Fototage blockiere ich für euch schon mal."
+    - titel: "Ablauf bis zum Fototag"
+      text: "Ich erstelle euch einen Link und QR Code (zum Aushang im Kindi) für die Anmeldung zum Fototag, der durch den Kindergarten kommuniziert wird."
+    - titel: "Nach dem Fototag"
+      text: "Die Eltern bekommen noch am Fototag vom Kind einen QR Code. Über diesen können die Bilder im Nachgang angeschaut und bestellt werden."
+
+
+# ── GALLERY ─────────────────────────────────────────
+gallery:
+  heading: "Einblicke"
+
+
+# ── ÜBER MICH ───────────────────────────────────────
+about:
+  eyebrow: "Über mich"
+  heading: "Kindergartenfotografin und Schulfotografin Patricia Bachmann"
+  bio: "Hi, ich bin Patricia. Seit 2018 arbeite ich als Fotografin — zuerst vorwiegend im Hochzeitsbereich, seit einigen Jahren spezialisiere ich mich auf Kinderfotografie in Kitas und Grundschulen. Meine Motivation begann, als ich für meine eigene Tochter besondere Kindergartenfotos haben wollte — seitdem durfte ich über 15 Einrichtungen begleiten."
+  vision_label: "Meine Vision"
+  vision_text: "Authentische Bilder, die Emotionen und Persönlichkeit jedes einzelnen Kindes einfangen."
+  ansatz_label: "Mein Ansatz"
+  ansatz_text: "Einfach für Erzieher aber wertvoll für Eltern. Ich möchte unkomplizierte Abläufe für Einrichtungen und Erzieher*innen."
+  google_count: "12 Bewertungen"
+  google_score: "5,0"
+  google_link: "Alle Reviews ansehen"
+
+
+# ── TEAM ────────────────────────────────────────────
+team:
+  heading: "Das Team"
+  subtext: "Wir wollen euch dabei unterstützen die schönsten Bilder eurer Kinder zu bekommen und den besten Support den es gibt."
+
+
+# ── CTA (dunkle Sektion mit Hintergrundbild) ────────
+cta:
+  heading: "Bereit für unvergessliche Kindergarten- oder Schulfotos?"
+  subtext: "Kontaktieren Sie mich für ein persönliches Gespräch und lassen Sie uns Ihre Vision verwirklichen."
+  button: "Jetzt Verfügbarkeit anfragen"
+
+
+# ── FAQ ─────────────────────────────────────────────
+faq:
+  eyebrow: "FAQ"
+  heading: "FAQs"
+  subtext: "Antworten auf die wichtigsten Fragen zur Kindergartenfotografie"
+  noch_fragen_heading: "Noch fragen?"
+  noch_fragen_text: "Dann nutze gern mein Kontaktformular und stelle deine Frage"
+  noch_fragen_button: "Zum Kontaktformular"
+  fragen:
+    - question: "Was für Pakete bietest du an?"
+      answer: "Die Pakete und aktuellen Preise findest du hier: <a href='/pakete'>Pakete</a>. Alle Pakete und Preise sende ich aber auch noch via E-Mail an die Kontaktperson."
+    - question: "Werden Geschwisterbilder gemacht?"
+      answer: "Ja es werden bevorzugt interne Geschwisterbilder gemacht. Intern bedeutet, dass die Geschwister im gleichen Kindergarten oder in der selben Schule aber in unterschiedliche Gruppen oder Klassen sind."
+    - question: "Bringst du auch Requisiten mit?"
+      answer: "Ja, ich baue ein individuelles Set-Up auf, das jährlich wechselt, um immer unterschiedliche Bilder zu haben."
+    - question: "Wie bekommen wir später die Bilder?"
+      answer: "Die Kinder erhalten am Fototag einen QR-Code Karte. Mit dem könnt ihr euch dann anmelden und die Bilder anschauen und direkt über Fotograf.de (sichere Verkaufsplattform) selbst aussuchen und entweder im Druck kaufen oder digital herunterladen."
+    - question: "Wie lange dauert die Bearbeitung?"
+      answer: "Je nach Volumen kann die Bearbeitung und Bereitstellung bis zu zwei Wochen andauern. Ich lege jedoch großen Wert darauf, dass die Bilder so zeitnah wie möglich ausgeliefert werden. Denn viele Eltern sind immer sehr neugierig gewesen und wollten ganz schnell die Bilder haben."

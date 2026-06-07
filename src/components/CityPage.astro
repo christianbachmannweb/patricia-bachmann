@@ -1,0 +1,257 @@
+---
+import Nav from './Nav.astro';
+import Footer from './Footer.astro';
+import FAQ from './FAQ.astro';
+import '../styles/global.css';
+import '@fontsource/ubuntu/400.css';
+import '@fontsource/ubuntu/500.css';
+import '@fontsource-variable/arima';
+
+interface Props {
+  city: string;
+  citySlug: string;
+  intro: string;
+  beschreibung: string;
+  lat: number;
+  lng: number;
+  faqs: { question: string; answer: string }[];
+}
+
+const { city, citySlug, intro, beschreibung, lat, lng, faqs } = Astro.props;
+
+const title = `Kindergartenfotografin ${city} | Patricia Bachmann`;
+const description = `Natürliche Kindergartenfotografie in ${city} und Umgebung – einfach für Erzieher, wertvoll für Eltern. Jetzt Verfügbarkeit anfragen!`;
+const canonical = `https://www.patricia-bachmann.de/kindergartenfotografie/${citySlug}`;
+const ogImage = 'https://www.patricia-bachmann.de/images/68f5d97ee5fc6b9192115130_Vavrova-Photography-1.jpg';
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+  }))
+});
+---
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="Patricia Bachmann Kindergartenfotografie" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  <link rel="icon" href="/images/68f693e4a34b49b0779b4f31_favicon-32x32.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/images/68f6942db4d0e09d8a747738_webclip-patricia-bachmann.png" />
+  <script type="application/ld+json" is:inline>{JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `Kindergartenfotografie ${city}`,
+    "serviceType": "Kindergartenfotografie",
+    "description": `Natürliche Kindergartenfotos für Kitas in ${city} und Umgebung.`,
+    "provider": { "@type": "LocalBusiness", "@id": "https://www.patricia-bachmann.de/#business" },
+    "areaServed": { "@type": "City", "name": city },
+    "url": canonical
+  })}</script>
+  <script type="application/ld+json" is:inline>{JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://www.patricia-bachmann.de" },
+      { "@type": "ListItem", "position": 2, "name": "Kindergartenfotografie", "item": "https://www.patricia-bachmann.de/kindergartenfotografie" },
+      { "@type": "ListItem", "position": 3, "name": `Kindergartenfotografie ${city}`, "item": canonical }
+    ]
+  })}</script>
+  <script type="application/ld+json" is:inline set:html={faqSchema} />
+</head>
+<body>
+  <Nav />
+
+  <!-- ── Hero ── -->
+  <section class="city-hero">
+    <div class="padding-global">
+      <div class="container-large city-hero__inner">
+        <div class="eyebrow margin-bottom">
+          <div class="eyebrow-bg"></div>
+          <p class="text-style-tagline">Kindergartenfotografie</p>
+        </div>
+        <h1 class="heading-style-h1">Kindergartenfotografin {city}</h1>
+        <p class="city-hero__intro">{intro}</p>
+        <div class="city-hero__buttons">
+          <a href="/kontakt" class="button">
+            <div class="button--content">
+              <span>Verfügbarkeit anfragen</span>
+              <img src="/images/68eb6c8d50f03f9535e61da3_patricia-bachman-kindergartenfotografie-goeppingen.avif" alt="" class="button--image" loading="eager" />
+            </div>
+          </a>
+          <a href="/pakete" class="button is-link">Pakete & Preise →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Über den Einsatz ── -->
+  <section class="city-about padding-section-large">
+    <div class="padding-global">
+      <div class="container-large city-about__inner">
+        <div class="city-about__text">
+          <div class="eyebrow margin-bottom">
+            <div class="eyebrow-bg"></div>
+            <p class="text-style-tagline">Über Patricia</p>
+          </div>
+          <h2 class="heading-style-h2">Fotografin für Kindergärten in {city}</h2>
+          <div class="city-about__body" set:html={beschreibung} />
+          <a href="/kindergartenfotografie" class="button is-link" style="margin-top:1.5rem">
+            ← Alles über Kindergartenfotografie
+          </a>
+        </div>
+        <div class="city-about__img-wrap">
+          <img
+            src="/images/68f0b172feff18808d2a454a_team-pati_patricia-bachmann-kindergartenfotografie.avif"
+            alt={`Kindergartenfotografin Patricia Bachmann aus dem Raum Göppingen – fotografiert auch in ${city}`}
+            class="city-about__img"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Vorteile ── -->
+  <section class="city-vorteile padding-section-large">
+    <div class="padding-global">
+      <div class="container-large">
+        <h2 class="heading-style-h2 text-center">Warum Eltern und Einrichtungen in {city} Patricia wählen</h2>
+        <div class="city-vorteile__grid">
+          <div class="city-vorteil">
+            <strong>Kein Vorabgeld</strong>
+            <p>Eltern zahlen erst wenn sie die fertigen Bilder sehen und bestellen möchten.</p>
+          </div>
+          <div class="city-vorteil">
+            <strong>DSGVO-konform</strong>
+            <p>Alle Bilder werden sicher über Fotograf.de in Deutschland gehostet und verarbeitet.</p>
+          </div>
+          <div class="city-vorteil">
+            <strong>Einfach für Erzieher</strong>
+            <p>Patricia organisiert alles – Einrichtungen müssen sich um fast nichts kümmern.</p>
+          </div>
+          <div class="city-vorteil">
+            <strong>Schnelle Lieferung</strong>
+            <p>Die fertigen Fotos sind in der Regel nach ca. 2 Wochen online abrufbar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <FAQ
+    eyebrow="FAQ"
+    heading={`Häufige Fragen zur Kindergartenfotografie in ${city}`}
+    subtext="Alles Wichtige auf einen Blick."
+    faqs={faqs}
+  >
+    <div class="city-faq-cta">
+      <p>Noch Fragen? <a href="/kontakt">Schreib Patricia direkt</a>.</p>
+    </div>
+  </FAQ>
+
+  <!-- ── CTA ── -->
+  <section class="city-cta">
+    <div class="padding-global">
+      <div class="container-large city-cta__inner">
+        <img
+          src="/images/68ebdef61d9c0d5c04ed3923_gopher-kindergartenphptography.avif"
+          alt=""
+          class="city-cta__gopher"
+          loading="lazy"
+        />
+        <h2 class="heading-style-h2">Kindergartenfotos in {city} anfragen</h2>
+        <p>Eltern schlagen Patricia im Kindergarten vor — oder Einrichtungen melden sich direkt.</p>
+        <a href="/kontakt" class="button">
+          <div class="button--content">
+            <span>Jetzt anfragen</span>
+            <img src="/images/68eb6c8d50f03f9535e61da3_patricia-bachman-kindergartenfotografie-goeppingen.avif" alt="" class="button--image" />
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</body>
+</html>
+
+<style>
+.padding-global { padding-left: var(--pad-x); padding-right: var(--pad-x); }
+.container-large { width: 100%; max-width: 80rem; margin: 0 auto; }
+.padding-section-large { padding-top: 7rem; padding-bottom: 7rem; }
+.text-center { text-align: center; }
+
+.eyebrow { position: relative; display: inline-flex; padding: 0.3rem 0.45rem 0.2375rem 0.5rem; }
+.eyebrow-bg { position: absolute; inset: 0; z-index: 0; border: 0.5px solid #f4b8ce; border-radius: 0.3rem; background-color: rgba(255,198,218,0.16); }
+.text-style-tagline { position: relative; z-index: 1; font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #b06080; }
+.margin-bottom { margin-bottom: 1rem; }
+.heading-style-h1 { font-family: var(--font-heading); font-size: clamp(2.4rem,5vw,4rem); letter-spacing:-0.05em; font-weight:400; line-height:1.15; }
+.heading-style-h2 { font-family: var(--font-heading); font-size: clamp(1.9rem,4vw,3.25rem); letter-spacing:-0.02em; font-weight:400; line-height:1.2; }
+.button { display:inline-flex; align-items:center; gap:0.5rem; border:1px solid var(--color-glacier-dark); background-color:var(--color-glacier); color:var(--color-text); border-radius:10px; padding:0.175rem 0.175rem 0.175rem 1.5rem; font-family:var(--font-body); font-weight:500; text-decoration:none; transition:border-color 0.2s,background-color 0.6s; }
+.button:hover { background-image: linear-gradient(135deg,#e6eff3,#6b8c9e); }
+.button--content { display:flex; align-items:center; gap:0.5rem; }
+.button--image { width:2.25rem; height:2.25rem; border-radius:50%; object-fit:cover; flex-shrink:0; }
+.button.is-link { background:none; border:none; padding:0.25rem 0; color:var(--color-text); }
+.button.is-link:hover { text-decoration:underline; background-image:none; }
+
+/* Hero */
+.city-hero { background: var(--color-sandy); padding-top: clamp(5rem,10vw,8rem); padding-bottom: clamp(3rem,6vw,5rem); }
+.city-hero__inner { display: flex; flex-direction: column; max-width: 680px; }
+.city-hero__intro { font-size: 1.15rem; line-height: 1.7; color: var(--color-text-mid); margin: 1rem 0 2rem; }
+.city-hero__buttons { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+
+/* Über */
+.city-about { background: var(--color-bg); }
+.city-about__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.city-about__text { display: flex; flex-direction: column; align-items: flex-start; }
+.city-about__body { color: var(--color-text-mid); line-height: 1.8; margin-top: 1rem; }
+.city-about__body :global(p) { margin-bottom: 0.75rem; }
+.city-about__img-wrap { border-radius: 16px; overflow: hidden; }
+.city-about__img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+
+/* Vorteile */
+.city-vorteile { background: var(--color-bg-2); }
+.city-vorteile h2 { margin-bottom: 3rem; }
+.city-vorteile__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.city-vorteil { background: var(--color-bg); border-radius: 12px; padding: 1.5rem 2rem; }
+.city-vorteil strong { display: block; font-size: 1.05rem; margin-bottom: 0.5rem; }
+.city-vorteil p { color: var(--color-text-mid); font-size: 0.95rem; line-height: 1.6; }
+
+/* FAQ extra */
+.city-faq-cta { margin-top: 2rem; color: var(--color-text-mid); }
+.city-faq-cta a { color: var(--color-text); font-weight: 500; }
+
+/* CTA */
+.city-cta { background: var(--color-bg-2); padding: clamp(4rem,8vw,6rem) 0; }
+.city-cta__inner { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center; }
+.city-cta__gopher { width: 5rem; }
+.city-cta__inner p { color: var(--color-text-mid); max-width: 480px; }
+
+@media (max-width: 768px) {
+  .city-about__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .city-about__img-wrap { order: -1; }
+  .city-vorteile__grid { grid-template-columns: 1fr; }
+  .padding-section-large { padding-top: 4rem; padding-bottom: 4rem; }
+}
+</style>

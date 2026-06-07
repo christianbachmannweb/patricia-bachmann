@@ -1,0 +1,86 @@
+---
+// Wiederverwendbare FAQ-Sektion (Accordion). Inhalt per Props austauschbar.
+interface FaqItem { question: string; answer: string; }
+interface Props {
+  faqs: FaqItem[];
+  eyebrow?: string;
+  heading?: string;
+  subtext?: string;
+}
+const { faqs, eyebrow, heading = 'FAQs', subtext } = Astro.props;
+---
+
+<section class="faq-cmp">
+  <div class="faq-cmp-pad">
+  <div class="faq-cmp-inner">
+    {eyebrow && (
+      <div class="faq-cmp-eyebrow scroll-reveal">
+        <div class="faq-cmp-eyebrow-bg"></div>
+        <p class="faq-cmp-tag">{eyebrow}</p>
+      </div>
+    )}
+    <h2 class="faq-cmp-heading scroll-reveal">{heading}</h2>
+    {subtext && <p class="faq-cmp-sub scroll-reveal">{subtext}</p>}
+    <div class="faq-cmp-list">
+      {faqs.map((faq) => (
+        <div class="faq-cmp-item">
+          <button class="faq-cmp-question" aria-expanded="false">
+            <span>{faq.question}</span>
+            <span class="faq-cmp-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-cmp-answer" set:html={faq.answer} />
+        </div>
+      ))}
+    </div>
+    <slot />
+  </div>
+  </div>
+</section>
+
+<style>
+.faq-cmp { padding-top: 7rem; padding-bottom: 7rem; }
+.faq-cmp-pad { padding-left: var(--pad-x); padding-right: var(--pad-x); }
+.faq-cmp-inner { width: 100%; max-width: 80rem; margin: 0 auto; }
+
+.faq-cmp-eyebrow { position: relative; display: inline-flex; padding: 0.3rem 0.45rem 0.2375rem 0.5rem; justify-content: center; align-items: center; margin-bottom: 1rem; }
+.faq-cmp-eyebrow-bg { position: absolute; inset: 0; z-index: 0; border: 0.5px solid #f4b8ce; border-radius: 0.3rem; background-color: rgba(255,198,218,0.16); }
+.faq-cmp-tag { position: relative; z-index: 1; font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #b06080; }
+
+.faq-cmp-heading { font-family: var(--font-heading); font-size: clamp(1.9rem, 4vw, 3.25rem); letter-spacing: -0.02em; font-weight: 400; line-height: 1.2; margin-bottom: 0.5rem; }
+.faq-cmp-sub { color: var(--color-text-mid); margin-bottom: 2.5rem; }
+
+.faq-cmp-list { display: flex; flex-direction: column; width: 100%; }
+.faq-cmp-item { border-bottom: 1px solid var(--color-border); }
+.faq-cmp-question {
+  width: 100%; background: none; border: none;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.25rem 0;
+  font-family: var(--font-body); font-size: 1rem; font-weight: 500;
+  cursor: pointer; text-align: left; color: var(--color-text); gap: 1rem;
+}
+.faq-cmp-icon { font-size: 1.5rem; font-weight: 300; transition: transform 0.3s; flex-shrink: 0; }
+.faq-cmp-item.is-open .faq-cmp-icon { transform: rotate(45deg); }
+.faq-cmp-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; padding-bottom: 0; color: var(--color-text-mid); line-height: 1.7; font-size: 0.95rem; }
+.faq-cmp-answer :global(a) { text-decoration: underline; }
+.faq-cmp-item.is-open .faq-cmp-answer { max-height: 400px; padding-bottom: 1.25rem; }
+
+@media (max-width: 640px) {
+  .faq-cmp { padding-top: 4rem; padding-bottom: 4rem; }
+}
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.faq-cmp-item').forEach(item => {
+    item.querySelector('.faq-cmp-question')?.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('is-open');
+      document.querySelectorAll<HTMLElement>('.faq-cmp-item').forEach(i => {
+        i.classList.remove('is-open');
+        i.querySelector('.faq-cmp-question')?.setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        item.classList.add('is-open');
+        item.querySelector('.faq-cmp-question')?.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>

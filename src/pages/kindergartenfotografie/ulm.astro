@@ -1,0 +1,25 @@
+---
+import CityPage from '../../components/CityPage.astro';
+
+const faqs = [
+  { question: 'Fotografierst du auch in Ulm?', answer: 'Ja, ich bin auch im Raum Ulm / Neu-Ulm aktiv und fahre dorthin für Kindergärten und Grundschulen. Die Anfahrt ist für die Einrichtung kostenlos.' },
+  { question: 'Wie läuft ein Fototag in Ulm ab?', answer: 'Ich komme mit meinem kompletten Set-Up und fotografiere jedes Kind – schnell, einfühlsam und ohne viel Aufwand für das Erzieher-Team.' },
+  { question: 'Was kostet die Kindergartenfotografie in Ulm?', answer: 'Für die Einrichtung entstehen keine Kosten. Eltern bestellen ihre Bilder erst nach dem Fototag online über ein sicheres Portal.' },
+  { question: 'Können Eltern mich als Fotografin vorschlagen?', answer: 'Absolut – schlagt mich einfach beim nächsten Elternabend oder im Elternbeirat vor. Ich sende euch gerne Infomaterial zum Weitergeben.' },
+  { question: 'Wann sind die Bilder verfügbar?', answer: 'Meist etwa 2 Wochen nach dem Fototag. Eltern erhalten einen persönlichen QR-Code und können die Fotos online einsehen und bestellen.' },
+];
+---
+
+<CityPage
+  city="Ulm"
+  citySlug="ulm"
+  lat={48.3974}
+  lng={9.9934}
+  intro="Natürliche Kindergartenfotografie im Raum Ulm und Neu-Ulm – Patricia Bachmann fotografiert Kinder so wie sie wirklich sind."
+  beschreibung={`
+    <p>Kindergärten und Grundschulen im Raum Ulm und Neu-Ulm können Patricia als Fotografin anfragen. Ich bin regelmäßig in der Region unterwegs und bringe alles mit – vom Set-Up bis zu den Requisiten.</p>
+    <p>Mein Ansatz: keine künstlichen Posen, sondern echte Kindermomente. Die Eltern erhalten im Nachgang einen persönlichen Zugang zu den Bildern und bestellen bequem online.</p>
+    <p>Für Einrichtungen in Ulm entstehen keine Kosten. Der gesamte Ablauf ist so gestaltet, dass Erzieher und Lehrer kaum Aufwand haben.</p>
+  `}
+  faqs={faqs}
+/>

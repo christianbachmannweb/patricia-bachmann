@@ -1,0 +1,78 @@
+# ═══════════════════════════════════════════════════
+# HILFE-SEITE – Alle Fragen & Antworten hier pflegen
+# Neue Frage hinzufügen: einfach einen neuen
+#   - question: "..."
+#     answer: "..."
+# Block in die passende Section kopieren.
+# ═══════════════════════════════════════════════════
+
+intro:
+  eyebrow: "Hilfe"
+  heading: "Häufige Fragen zur Bildbestellung"
+  subtext: "Hier findest du Antworten auf die häufigsten Fragen rund um den Fototag, die Bildbestellung über Fotograf.de und technische Probleme. Nicht dabei? Schreib Patricia direkt."
+
+sections:
+  - id: "qr-code"
+    eyebrow: "QR-Code & Zugang"
+    heading: "QR-Code und Zugangsdaten"
+    faqs:
+      - question: "Ich habe meinen QR-Code verloren. Wie komme ich an meine Bilder?"
+        answer: "Schreib Patricia eine Nachricht mit dem Namen deines Kindes und dem Kindergarten bzw. der Schule. Sie kann dir einen neuen Zugangscode erstellen oder dir direkt den Link schicken."
+      - question: "Der QR-Code führt zu keiner Seite – was ist passiert?"
+        answer: "Prüfe zuerst, ob dein Internet aktiv ist. Falls ja, kontaktiere Patricia – sie schaut, ob der Link noch aktiv ist und schickt dir gegebenenfalls einen neuen."
+      - question: "Ich sehe beim Öffnen nur Fotos von anderen Kindern."
+        answer: "Das kann passieren, wenn der QR-Code für eine ganze Gruppe gilt. Du siehst dann alle Gruppenfotos der Einrichtung. Einzelportraits deines Kindes findest du unter einem separaten Code – wenn du keinen erhalten hast, melde dich gerne bei Patricia."
+      - question: "Wie lange ist der QR-Code gültig?"
+        answer: "Die Bilder sind in der Regel mehrere Wochen nach dem Fototag abrufbar. Patricia informiert im Vorfeld, falls ein konkretes Ablaufdatum gilt."
+
+  - id: "bestellung"
+    eyebrow: "Bestellung"
+    heading: "Bilder auswählen und bestellen"
+    faqs:
+      - question: "Wie bestelle ich Bilder?"
+        answer: "Öffne den QR-Code oder den Link, den dein Kind am Fototag bekommen hat. Du siehst alle verfügbaren Fotos. Wähle die gewünschten Bilder aus, leg sie in den Warenkorb und geh zur Kasse. Die Bezahlung läuft sicher über Fotograf.de."
+      - question: "Kann ich einzelne Bilder auswählen oder muss ich Pakete kaufen?"
+        answer: "Beides ist möglich. Es gibt vordefinierte Pakete (z.&thinsp;B. Basis, Spar, Premium) – du kannst aber auch einzelne Formate dazubuchen. Die genauen Optionen siehst du direkt im Portal."
+      - question: "Gibt es eine Mindestbestellmenge?"
+        answer: "Nein. Du musst nichts bestellen, wenn dir die Bilder nicht gefallen. Es gibt keine Verpflichtung und kein Vorabgeld. Die Eltern entscheiden selbst."
+      - question: "Kann ich die Bestellung nachträglich ändern oder stornieren?"
+        answer: "Solange die Bestellung noch nicht in Produktion ist, schreib Patricia oder wende dich direkt an den Support von Fotograf.de. Nach Produktionsbeginn ist eine Stornierung in der Regel nicht mehr möglich."
+
+  - id: "bezahlung"
+    eyebrow: "Bezahlung"
+    heading: "Bezahlung und Rechnung"
+    faqs:
+      - question: "Welche Zahlungsmethoden sind möglich?"
+        answer: "Fotograf.de akzeptiert unter anderem Kreditkarte (Visa, Mastercard), PayPal und SEPA-Lastschrift. Welche Optionen verfügbar sind, siehst du beim Checkout."
+      - question: "Ich bekomme eine Fehlermeldung bei der Bezahlung – was tun?"
+        answer: "Prüfe zuerst deine Kartendaten bzw. ob ausreichend Limit vorhanden ist. Falls der Fehler bleibt, probiere eine andere Zahlungsmethode oder kontaktiere deinen Kreditkartenanbieter."
+      - question: "Wo finde ich meine Rechnung?"
+        answer: "Nach der Bestellung erhältst du eine Bestätigungsmail mit der Rechnung. Schau auch im Spam-Ordner. Alternativ kannst du dich in deinem Fotograf.de-Konto einloggen und die Bestellhistorie aufrufen."
+      - question: "Muss ich als Kindergarten oder Schule etwas bezahlen?"
+        answer: "Nein. Für Einrichtungen entstehen keinerlei Kosten. Weder für den Fototag noch für die Nutzung des Portals. Nur die Eltern bezahlen, wenn sie Bilder bestellen möchten."
+
+  - id: "download"
+    eyebrow: "Download & Druck"
+    heading: "Digitale Bilder und Druckprodukte"
+    faqs:
+      - question: "Ich habe ein Digital-Paket bestellt – wo kann ich die Bilder herunterladen?"
+        answer: "Nach der Bestellung erhältst du eine E-Mail mit einem Download-Link. Alternativ: In deinem Konto einloggen → Bestellhistorie → Download. Die Bilder sind in hoher Auflösung verfügbar."
+      - question: "Wie lange kann ich meine digitalen Bilder herunterladen?"
+        answer: "Digitale Bilder bleiben in der Regel 12 Monate in deinem Konto abrufbar. Lade sie am besten zeitnah nach der Bestellung herunter und speichere sie lokal oder in einer Cloud."
+      - question: "Wann werden bestellte Prints geliefert?"
+        answer: "Die Produktion dauert in der Regel 5–10 Werktage nach Bestelleingang. Dazu kommt die Versandzeit von 1–3 Werktagen. Du erhältst eine Versandbestätigung per E-Mail."
+      - question: "Die Bildqualität beim Druck ist schlechter als erwartet – was kann ich tun?"
+        answer: "Die Dateien von Fotograf.de sind in voller Auflösung und für den Druck optimiert. Falls die gelieferten Prints nicht deinen Erwartungen entsprechen, wende dich an den Support von Fotograf.de – sie helfen bei Reklamationen."
+
+  - id: "technik"
+    eyebrow: "Technische Probleme"
+    heading: "Technische Probleme lösen"
+    faqs:
+      - question: "Die Seite lädt nicht oder zeigt einen Fehler an."
+        answer: "Versuche es mit einem anderen Browser (z.&thinsp;B. Chrome oder Safari) oder schließe andere Tabs. Lösche den Browser-Cache und lade die Seite neu. Falls es weiterhin nicht klappt, schreib Patricia – sie prüft, ob es am Link liegt."
+      - question: "Ich bin ausgeloggt und komme nicht mehr ins Portal."
+        answer: 'Gehe auf <a href="https://patricia-bachmann.fotograf.de/kunden/login" target="_blank" rel="noopener">patricia-bachmann.fotograf.de/kunden/login</a> und klicke auf „Passwort vergessen". Du bekommst einen Reset-Link an deine E-Mail-Adresse.'
+      - question: "Die Bilder werden nicht angezeigt, obwohl ich eingeloggt bin."
+        answer: "Das liegt oft an einer langsamen Verbindung. Lade die Seite neu und warte kurz. Falls das Problem bleibt, kontaktiere Patricia – sie kann prüfen, ob am Zugang etwas nicht stimmt."
+      - question: "Ich habe keine Bestätigungsmail nach der Bestellung erhalten."
+        answer: "Schau zuerst im Spam- oder Junk-Ordner deines E-Mail-Programms. Falls sie dort nicht ist, prüfe ob beim Checkout die richtige E-Mail-Adresse angegeben war. Im Zweifelsfall wende dich an den Support von Fotograf.de."

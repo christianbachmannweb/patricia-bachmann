@@ -1,0 +1,454 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import WhatsApp from '../components/WhatsApp.astro';
+import FAQ from '../components/FAQ.astro';
+import '../styles/global.css';
+import '@fontsource/ubuntu/400.css';
+import '@fontsource/ubuntu/500.css';
+import '@fontsource/ubuntu/700.css';
+import '@fontsource-variable/arima';
+
+const printPakete = [
+  {
+    name: 'Basis',
+    price: '25,50',
+    features: [
+      { qty: '2', item: '10x15 Premium Matt' },
+      { qty: '2', item: '13x19 Premium Matt' },
+      { qty: '1', item: '15x21 Premium Matt' },
+      { qty: '1', item: 'Klebebilder (8er)' },
+    ],
+    featured: false,
+  },
+  {
+    name: 'Spar Paket',
+    price: '39,50',
+    features: [
+      { qty: '4', item: '10x15 Supreme Glanz' },
+      { qty: '2', item: '13x19 Premium Matt' },
+      { qty: '1', item: '15x21 Supreme Glanz' },
+      { qty: '1', item: 'Klebebilder (8er Set)' },
+      { qty: '1', item: 'Klebebilder (16er Set)' },
+    ],
+    featured: false,
+  },
+  {
+    name: 'Premium',
+    price: '75,50',
+    features: [
+      { qty: '8', item: '10x15 Premium Matt' },
+      { qty: '8', item: '13x19 Premium Matt' },
+      { qty: '2', item: '15x21 Premium Matt' },
+      { qty: '2', item: 'Magnetsticker (4er Set)' },
+      { qty: '1', item: 'Klebebilder (16er Set)' },
+      { qty: '1', item: '13x18 Foto Multi Set Matt' },
+    ],
+    gopher: '690275d27fc3f98b20c14a6d_gopher-most.avif',
+    featured: true,
+  },
+  {
+    name: 'Geschwister',
+    price: '85,50',
+    features: [
+      { qty: '6', item: '10x15 Premium Matt' },
+      { qty: '6', item: '13x19 Premium Matt' },
+      { qty: '2', item: '15x21 Premium Matt' },
+      { qty: '2', item: '20x30 Supreme Glanz' },
+      { qty: '3', item: 'Klebebilder (8er Set)' },
+      { qty: '4', item: '6x9 4er Foto-Set' },
+      { qty: '1', item: '13x18 Fotoaufsteller' },
+    ],
+    featured: false,
+  },
+];
+
+
+const faqs = [
+  { question: 'Wie findet der Verkauf statt?', answer: 'Der Verkauf der Kindergarten- und Schulbilder findet ausschließlich online statt. Es wird nur das produziert, was ihr auswählt.' },
+  { question: 'Was ist wenn mir die Bilder nicht gefallen?', answer: 'Das wäre natürlich sehr schade. Aber es gibt bei mir keine Abnahmepflicht der Kindergarten- bzw. Schulbilder. Auch keine Mindestbestellmenge.' },
+  { question: 'Was ist wenn ich gedruckte Bilder reklamieren möchte?', answer: 'Hierfür schreibt ihr mir gerne eine E-Mail, diese bearbeite ich so schnell wie möglich und leite alles Weitere in die Wege.' },
+  { question: 'Werden auch Bilder der Erzieher oder Lehrer gemacht?', answer: 'Hierfür gibt es spezielle Preispakete. Für weitere Infos zu den Preisen schreibt mir bitte eine E-Mail an hallo@patricia-bachmann.de.' },
+];
+---
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preise & Pakete | Kindergartenfotografie Göppingen – Patricia Bachmann</title>
+  <meta name="description" content="Transparente Preise für Kindergarten- & Schulfotografie in Göppingen. Pakete ab Basis bis Premium – kein Vorabgeld, Eltern bestellen direkt online." />
+  <link rel="canonical" href="https://www.patricia-bachmann.de/pakete" />
+  <meta name="robots" content="index, follow" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.patricia-bachmann.de/pakete" />
+  <meta property="og:title" content="Preise & Pakete | Kindergartenfotografie Göppingen" />
+  <meta property="og:description" content="Transparente Preise für Kindergarten- & Schulfotografie in Göppingen. Pakete ab Basis bis Premium – kein Vorabgeld, Eltern bestellen direkt online." />
+  <meta property="og:image" content="https://www.patricia-bachmann.de/images/68f5d97ee5fc6b9192115130_Vavrova-Photography-1.jpg" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="Patricia Bachmann Kindergartenfotografie" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Preise & Pakete | Kindergartenfotografie Göppingen" />
+  <meta name="twitter:description" content="Transparente Preise für Kindergarten- & Schulfotografie in Göppingen. Pakete ab Basis bis Premium." />
+  <meta name="twitter:image" content="https://www.patricia-bachmann.de/images/68f5d97ee5fc6b9192115130_Vavrova-Photography-1.jpg" />
+  <link rel="icon" href="/images/68f693e4a34b49b0779b4f31_favicon-32x32.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/images/68f6942db4d0e09d8a747738_webclip-patricia-bachmann.png" />
+  <!-- Schema: Service + Offers -->
+  <script type="application/ld+json" is:inline>{JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Kindergarten- & Schulfotografie Pakete",
+    "provider": { "@type": "LocalBusiness", "@id": "https://www.patricia-bachmann.de/#business" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Fotografie-Pakete",
+      "itemListElement": [
+        { "@type": "Offer", "name": "Basis-Paket", "description": "1 Bild, Druckformat nach Wahl" },
+        { "@type": "Offer", "name": "Spar-Paket", "description": "3 Bilder, Druckformate nach Wahl" },
+        { "@type": "Offer", "name": "Premium-Paket", "description": "5 Bilder, alle Formate inklusive" },
+        { "@type": "Offer", "name": "Geschwister-Paket", "description": "Geschwisterbilder innerhalb einer Einrichtung" },
+        { "@type": "Offer", "name": "Digital-Paket", "description": "Alle Bilder als digitaler Download, 69 €" }
+      ]
+    }
+  })}</script>
+</head>
+<body>
+  <Nav />
+
+  <!-- ── Intro ── -->
+  <section class="section_preise_header padding-section-large">
+    <div class="padding-global">
+      <div class="container-large text-center">
+        <div class="eyebrow margin-bottom margin-xsmall scroll-reveal">
+          <div class="eyebrow-bg"></div>
+          <p class="text-style-tagline">Preise &amp; Pakete</p>
+        </div>
+        <h1 class="heading-style-h1 scroll-reveal">Was kosten die Fotos?</h1>
+        <p class="preise-sub scroll-reveal">
+          Hier findest du meine Preise für die Kindergarten- und Schulfotografie. Es gelten dieselben Pakete
+          für Kita und Schule. Alle Pakete richten sich an Eltern und Erzieher*innen – nicht an Unternehmen
+          oder Einrichtungen. Die Mehrwertsteuer ist also immer inbegriffen.
+        </p>
+        <a href="/kontakt" class="button scroll-reveal" style="display:inline-flex; margin-top:1.5rem;">
+          <div class="button--content">
+            <span>Jetzt Verfügbarkeit anfragen</span>
+            <img src="/images/68eb6c8d50f03f9535e61da3_patricia-bachman-kindergartenfotografie-goeppingen.avif" alt="" class="button--image" />
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pakete ── -->
+  <section class="section_preise_preis-sektion padding-section-large">
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="eyebrow margin-bottom margin-xsmall scroll-reveal">
+          <div class="eyebrow-bg"></div>
+          <p class="text-style-tagline">Pakete</p>
+        </div>
+        <h2 class="heading-style-h2 scroll-reveal">Diese Pakete biete ich an</h2>
+        <p class="pakete-sub scroll-reveal">
+          Transparente Preise für kostbare Erinnerungen – egal ob Kindergarten- oder Schulfotografie.
+          Die Pakete gelten für beide gleichermaßen.
+        </p>
+
+        <!-- Druck-Pakete -->
+        <div class="preise_grid">
+          {printPakete.map(paket => (
+            <div class:list={['preise_preis-sektion_plan scroll-reveal', { 'is-featured': paket.featured }]}>
+              {paket.featured && <span class="paket-badge">Beliebteste</span>}
+              {paket.gopher && (
+                <div class="paket-gopher">
+                  <img src={`/images/${paket.gopher}`} alt="" loading="lazy" />
+                </div>
+              )}
+              <div class="preise_preis-sektion_content-top">
+                <div class="paket-name">{paket.name}</div>
+                <div class="paket-price"><sub>ab </sub>{paket.price}€</div>
+              </div>
+              <ul class="preise_preis-sektion_feature-list">
+                {paket.features.map(f => (
+                  <li class="preise_preis-sektion_feature">
+                    <span class="feature-qty">{f.qty}</span>
+                    <span>{f.item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p class="paket-disclaimer">Versandkosten sind nicht in den Preisen enthalten.</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Digital-Paket (Callout) -->
+        <div class="digital-callout scroll-reveal">
+          <div class="digital-callout__price">
+            <span class="digital-callout__label">Digital Paket</span>
+            <div class="digital-callout__amount">69,00€<span class="digital-callout__unit"> alle Fotos</span></div>
+          </div>
+          <div class="digital-callout__divider" aria-hidden="true"></div>
+          <p class="digital-callout__text">Lieber alles digital? Alle Fotos deines Kindes als Download – kein Warten, kein Versand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How it works ── -->
+  <section class="section_preise_how-it-works padding-section-large">
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="eyebrow margin-bottom margin-xsmall scroll-reveal">
+          <div class="eyebrow-bg"></div>
+          <p class="text-style-tagline">Ablauf</p>
+        </div>
+        <h2 class="heading-style-h2 scroll-reveal">So funktioniert es</h2>
+        <div class="how-it-works__steps">
+          {[
+            { n: '1', title: 'Bildauswahl', text: 'Wähle deine Lieblingsbilder in der Fotograf.de Online-Galerie in deinem persönlichen Account aus.' },
+            { n: '2', title: 'Paket wählen', text: 'Du kannst zwischen den Paketen wählen, aber auch Bilder einzeln bestellen.' },
+            { n: '3', title: 'Versand / Download', text: 'Je nach Paket und Art des Versandes (Gruppenversand / Einzelversand) kannst du die Bilder direkt herunterladen oder sie werden zu dir nach Hause gesendet.' },
+          ].map(step => (
+            <div class="how-step scroll-reveal">
+              <div class="how-step__num">{step.n}</div>
+              <h3 class="heading-style-h5">{step.title}</h3>
+              <p>{step.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="section_cta27">
+    <div class="cta27_component">
+      <div class="cta27_bg-wrapper">
+        <img src="/images/6901d36e5cb124f0449c0f90_vavrova-photography-165-2-1.avif" alt="" class="cta27_bg-image" loading="lazy" />
+        <div class="cta27_overlay"></div>
+      </div>
+      <div class="cta27_content">
+        <h2 class="heading-style-h2 scroll-reveal">Bereit für unvergessliche Erinnerungen?</h2>
+        <p class="scroll-reveal">Kontaktiere mich für eine persönliche Beratung und individuelle Fotosession.</p>
+        <a href="/kontakt" class="button is-alternate scroll-reveal" style="margin-top:1.5rem; display:inline-flex;">
+          <div class="button--content">
+            <span>Jetzt Verfügbarkeit anfragen</span>
+            <img src="/images/68eb6c8d50f03f9535e61da3_patricia-bachman-kindergartenfotografie-goeppingen.avif" alt="" class="button--image" />
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ (Komponente) ── -->
+  <FAQ eyebrow="FAQ" heading="Fragen" subtext="Antworten auf häufig gestellte Fragen zu meinen Foto-Paketen." faqs={faqs}>
+    <div class="faq-cta scroll-reveal">
+      <h3 class="heading-style-h6">Deine Frage war nicht dabei?</h3>
+      <p>Dann schreib mir über das Kontaktformular.</p>
+      <a href="/kontakt" class="button is-link">Frage einreichen →</a>
+    </div>
+  </FAQ>
+
+  <WhatsApp />
+
+  <Footer />
+</body>
+</html>
+
+<style>
+.padding-global { padding-left: var(--pad-x); padding-right: var(--pad-x); }
+.container-large { width: 100%; max-width: 80rem; margin: 0 auto; }
+.padding-section-large { padding-top: 7rem; padding-bottom: 7rem; }
+.text-center { text-align: center; }
+
+/* Eyebrow Pills (wie Kita/Schule) */
+.eyebrow { position: relative; display: inline-flex; padding: 0.3rem 0.45rem 0.2375rem 0.5rem; justify-content: center; align-items: center; margin-bottom: 1rem; }
+.eyebrow-bg { position: absolute; inset: 0%; z-index: 0; border-style: solid; border-width: 0.5px; border-color: #f4b8ce; border-radius: 0.3rem; background-color: rgba(255, 198, 218, 0.16); }
+.text-style-tagline { position: relative; z-index: 1; display: inline-block; font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #b06080; text-decoration: none; }
+
+.heading-style-h1 { font-family: var(--font-heading); font-size: clamp(2.4rem,5vw,4rem); letter-spacing:-0.05em; font-weight:400; line-height:1.15; }
+.heading-style-h2 { font-family: var(--font-heading); font-size: clamp(1.9rem,4vw,3.25rem); letter-spacing:-0.02em; font-weight:400; line-height:1.2; }
+.heading-style-h5 { font-family: var(--font-heading); font-size: 1.75rem; font-weight:300; line-height:1.4; }
+.heading-style-h6 { font-family: var(--font-heading); font-size: 1.375rem; font-weight:400; line-height:1.4; }
+
+.button { display:inline-flex; align-items:center; gap:0.5rem; border:1px solid var(--color-glacier-dark); background-color:var(--color-glacier); color:var(--color-text); border-radius:10px; padding:0.175rem 0.175rem 0.175rem 1.5rem; font-family:var(--font-body); font-weight:500; text-decoration:none; transition:border-color 0.2s, background-color 0.6s; cursor:pointer; }
+.button:hover { background-image: linear-gradient(135deg, #e6eff3, #6b8c9e); }
+.button--content { display:flex; align-items:center; gap:0.5rem; }
+.button--image { width:2.25rem; height:2.25rem; border-radius:50%; object-fit:cover; flex-shrink:0; }
+.button.is-alternate { background-color:var(--color-text); color:var(--color-white); border-color:transparent; }
+.button.is-alternate:hover { background-image:none; background-color:var(--color-text-mid); }
+.button.is-link { background:none; border:none; padding:0.25rem 0; }
+.button.is-link:hover { text-decoration:underline; background-image:none; }
+
+/* Header */
+.section_preise_header { background: var(--color-bg-3); }
+.section_preise_header .eyebrow { justify-content: center; }
+.preise-sub { color: var(--color-text-mid); max-width: 44rem; margin: 1rem auto 0; line-height: 1.7; }
+
+/* Pakete Grid */
+.section_preise_preis-sektion { background: var(--color-bg); }
+.pakete-sub { color: var(--color-text-mid); max-width: 50rem; margin-bottom: 3rem; }
+.preise_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+  align-items: stretch;
+}
+.preise_preis-sektion_plan {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.preise_preis-sektion_plan:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.08); }
+.preise_preis-sektion_plan.is-featured {
+  background: var(--color-bg-3);
+  border: 1.5px solid var(--color-glacier);
+  box-shadow: 0 12px 36px rgba(107,140,158,0.18);
+  transform: scale(1.04);
+  z-index: 1;
+}
+.preise_preis-sektion_plan.is-featured:hover { box-shadow: 0 16px 44px rgba(107,140,158,0.24); }
+
+.paket-badge {
+  position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%);
+  background: var(--color-glacier); color: var(--color-text);
+  font-family: var(--font-body); font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 0.35rem 0.85rem; border-radius: 999px; white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.paket-gopher { position: absolute; top: -2.25rem; right: -0.5rem; width: 4.5rem; pointer-events: none; z-index: 2; }
+.paket-gopher img { width: 100%; }
+
+.paket-name { font-family: var(--font-heading); font-size: 1.375rem; font-weight: 400; }
+.paket-price { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 400; line-height: 1; margin-top: 0.25rem; }
+.paket-price sub { font-size: 1rem; font-family: var(--font-body); color: var(--color-text-mid); bottom: 0; }
+
+.preise_preis-sektion_feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+.preise_preis-sektion_feature { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.875rem; line-height: 1.4; }
+.feature-qty {
+  width: 1.5rem; height: 1.5rem; min-width: 1.5rem;
+  background: var(--color-glacier);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 700;
+  flex-shrink: 0;
+}
+.paket-disclaimer { font-size: 0.7rem; color: var(--color-text-light); text-align: center; margin-top: 0.5rem; }
+
+/* Digital-Callout */
+.digital-callout {
+  margin-top: 1.5rem;
+  background: var(--color-glacier);
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.digital-callout__price { flex-shrink: 0; min-width: 9rem; }
+.digital-callout__label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-glacier-dark);
+  font-family: var(--font-body);
+  margin-bottom: 0.3rem;
+}
+.digital-callout__amount {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-text);
+  line-height: 1;
+}
+.digital-callout__amount sub {
+  font-size: 0.8rem;
+  vertical-align: baseline;
+  font-family: var(--font-body);
+}
+.digital-callout__unit {
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--color-text);
+  opacity: 0.65;
+}
+.digital-callout__divider {
+  width: 1px;
+  height: 3rem;
+  background: var(--color-glacier-dark);
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+.digital-callout__text {
+  flex: 1;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* How it works */
+.section_preise_how-it-works { background: var(--color-bg-2); }
+.how-it-works__steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 3rem; }
+.how-step { display: flex; flex-direction: column; gap: 0.75rem; }
+.how-step__num {
+  width: 3rem; height: 3rem;
+  background: var(--color-glacier);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700;
+  color: var(--color-text);
+}
+.how-step p { color: var(--color-text-mid); font-size: 0.9rem; line-height: 1.6; }
+
+/* CTA */
+.section_cta27 { overflow: hidden; }
+.cta27_component { position: relative; min-height: 28rem; display: flex; align-items: center; }
+.cta27_bg-wrapper { position: absolute; inset: 0; }
+.cta27_bg-image { width: 100%; height: 100%; object-fit: cover; }
+.cta27_overlay { position: absolute; inset: 0; background: rgba(13,12,10,0.55); }
+.cta27_content { position: relative; z-index: 2; color: #fff; padding: 5rem var(--pad-x); max-width: 52rem; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.cta27_content h2 { color: #fff; margin-bottom: 1rem; }
+.cta27_content p { color: rgba(255,255,255,0.8); }
+
+/* FAQ-CTA (im FAQ-Slot, Seiten-Scope) */
+.faq-cta { margin-top: 3rem; padding: 2rem; background: var(--color-bg-3); border-radius: 12px; display: flex; flex-direction: column; gap: 0.5rem; max-width: 720px; }
+.faq-cta p { color: var(--color-text-mid); }
+
+/* Responsive */
+@media (max-width: 991px) {
+  .preise_grid { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .preise_preis-sektion_plan.is-featured { transform: none; }
+  .how-it-works__steps { grid-template-columns: 1fr; gap: 2rem; }
+}
+@media (max-width: 767px) {
+  .padding-section-large { padding-top: 4rem; padding-bottom: 4rem; }
+  .digital-callout { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .digital-callout__divider { width: 3rem; height: 1px; }
+}
+@media (max-width: 560px) {
+  .preise_grid { grid-template-columns: 1fr; }
+  .paket-gopher { right: 0.5rem; }
+}
+</style>
+
+<script>
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray<HTMLElement>('.scroll-reveal').forEach(el => {
+  gsap.from(el, { opacity: 0, y: 28, duration: 0.75, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+});
+</script>

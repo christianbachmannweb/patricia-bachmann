@@ -1,0 +1,481 @@
+---
+interface Props {
+  formId?: string;
+  successMessage?: string;
+  errorMessage?: string;
+}
+
+const {
+  formId = 'kontakt-form',
+  successMessage = 'Vielen Dank für deine Anfrage – ich melde mich so schnell wie möglich! 🤍',
+  errorMessage = 'Etwas ist schiefgelaufen. Schreib mir direkt an hallo@patricia-bachmann.de.',
+} = Astro.props;
+---
+
+<form
+  class="kontakt_formular-sektion_form"
+  id={formId}
+  action="https://n8n.polizen.app/webhook/patricia-bachmann-form"
+  method="POST"
+  novalidate
+  data-success={successMessage}
+  data-error={errorMessage}
+>
+  <!-- Honeypot -->
+  <div style="position:absolute;left:-9999px;" aria-hidden="true">
+    <input type="text" name="website_url" tabindex="-1" autocomplete="off" />
+  </div>
+  <!-- Timestamp -->
+  <input type="hidden" name="_timestamp" id={`ts-${formId}`} />
+
+  <!-- Name -->
+  <div class="form_field-2col">
+    <div class="form_field-wrapper">
+      <label for={`${formId}-vorname`} class="form_field-label">Vorname</label>
+      <input
+        class="form_input"
+        type="text"
+        id={`${formId}-vorname`}
+        name="Vorname"
+        required
+        autocomplete="given-name"
+      />
+    </div>
+    <div class="form_field-wrapper">
+      <label for={`${formId}-nachname`} class="form_field-label">Nachname</label>
+      <input
+        class="form_input"
+        type="text"
+        id={`${formId}-nachname`}
+        name="Nachname"
+        required
+        autocomplete="family-name"
+      />
+    </div>
+  </div>
+
+  <!-- Kontakt -->
+  <div class="form_field-2col is-mobile-1col">
+    <div class="form_field-wrapper">
+      <label for={`${formId}-email`} class="form_field-label">E-Mail</label>
+      <input
+        class="form_input"
+        type="email"
+        id={`${formId}-email`}
+        name="E-Mail"
+        required
+        autocomplete="email"
+      />
+    </div>
+    <div class="form_field-wrapper">
+      <label for={`${formId}-telefon`} class="form_field-label">Telefonnummer</label>
+      <input
+        class="form_input"
+        type="tel"
+        id={`${formId}-telefon`}
+        name="Telefonnummer"
+        autocomplete="tel"
+      />
+    </div>
+  </div>
+
+  <!-- Thema -->
+  <div class="form_field-wrapper">
+    <label for={`${formId}-auswahl`} class="form_field-label">Thema wählen</label>
+    <select
+      class="form_input is-select-input"
+      id={`${formId}-auswahl`}
+      name="Auswahl"
+      required
+    >
+      <option value="Kindergartenfotografie">Kindergartenfotografie</option>
+      <option value="Schulfotografie">Schulfotografie</option>
+      <option value="Privates Fotoshooting">Privates Fotoshooting</option>
+      <option value="Eine Frage">Eine Frage</option>
+    </select>
+  </div>
+
+  <!-- Wer fragt an -->
+  <div class="padding-vertical padding-xsmall">
+    <div class="form_field-wrapper">
+      <div class="form_field-label" style="margin-bottom:0.75rem;">Als was fragst du an?</div>
+      <div class="form_radio-2col">
+        <label class="form_radio">
+          <div class="form_radio-icon"></div>
+          <input
+            type="radio"
+            name="Wer-fragt-an"
+            id={`${formId}-erzieher`}
+            value="Erzieher*in / Lehrer*in"
+          />
+          <span class="form_radio-label">Erzieher*in / Lehrer*in</span>
+        </label>
+        <label class="form_radio">
+          <div class="form_radio-icon"></div>
+          <input
+            type="radio"
+            name="Wer-fragt-an"
+            id={`${formId}-elternteil`}
+            value="Elternteil"
+          />
+          <span class="form_radio-label">Elternteil</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nachricht -->
+  <div class="form_field-wrapper">
+    <label for={`${formId}-nachricht`} class="form_field-label">Nachricht</label>
+    <textarea
+      class="form_input is-text-area"
+      id={`${formId}-nachricht`}
+      name="Nachricht"
+      placeholder="Ihre Nachricht hier"
+      required
+      maxlength="5000"
+    ></textarea>
+  </div>
+
+  <!-- Datenschutz -->
+  <div>
+    <label class="form_checkbox">
+      <div class="form_checkbox-icon"></div>
+      <input
+        type="checkbox"
+        name="Datenschutz-akzeptiert"
+        id={`${formId}-datenschutz`}
+        required
+        style="opacity:0;position:absolute;z-index:-1;"
+      />
+      <span class="form_checkbox-label text-size-small">
+        Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen und akzeptiere diese
+      </span>
+    </label>
+  </div>
+
+  <!-- Turnstile -->
+  <div
+    class="cf-turnstile"
+    data-sitekey="0x4AAAAAADa5t4gWvo4FPXIh"
+    data-callback="onTurnstileSuccess"
+    data-theme="light"
+  ></div>
+
+  <!-- Feedback -->
+  <div class="form_feedback" id={`${formId}-feedback`} role="alert" aria-live="polite"></div>
+
+  <button
+    type="submit"
+    class="button is-form"
+    id={`${formId}-submit`}
+    disabled
+  >
+    Absenden
+  </button>
+</form>
+
+<style>
+.kontakt_formular-sektion_form {
+  display: grid;
+  grid-row-gap: 1.5rem;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  position: relative;
+}
+
+.form_field-2col {
+  display: grid;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.form_field-wrapper { position: relative; }
+
+.form_field-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.form_input {
+  width: 100%;
+  border: 1px solid transparent;
+  background-color: #fff0d5;
+  color: var(--color-text);
+  border-radius: 12px;
+  min-height: 2.75rem;
+  margin-bottom: 0;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.form_input:hover { background-color: var(--color-sandy); }
+
+.form_input:focus {
+  border-color: var(--color-text);
+  outline: 3px solid #4c7f88;
+  outline-offset: 0;
+}
+
+.form_input::placeholder { color: rgba(13,12,10,0.5); }
+
+.form_input.is-text-area {
+  height: auto;
+  min-height: 11.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  resize: vertical;
+}
+
+.form_input.is-select-input {
+  appearance: none;
+  background-image: url('/images/68eb5d742fac84e66739a3a0_chevron-down.svg');
+  background-position: calc(100% - 0.75rem) center;
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+/* Radio */
+.form_radio-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.form_radio {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 0;
+  cursor: pointer;
+}
+
+.form_radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.form_radio-icon {
+  width: 1.125rem;
+  min-width: 1.125rem;
+  height: 1.125rem;
+  border: 1px solid rgba(13,12,10,0.15);
+  background-color: rgba(13,12,10,0.05);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.form_radio input[type="radio"]:checked + .form_radio-label {
+  font-weight: 600;
+}
+
+/* Detect checked via JS class toggle */
+.form_radio.is-checked .form_radio-icon {
+  border-width: 6px;
+  border-color: var(--color-text);
+  background-color: #fff;
+}
+
+.form_radio-label {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* Checkbox */
+.form_checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding-left: 0;
+  cursor: pointer;
+}
+
+.form_checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.form_checkbox-icon {
+  width: 1.125rem;
+  min-width: 1.125rem;
+  height: 1.125rem;
+  border: 1px solid rgba(13,12,10,0.15);
+  background-color: rgba(13,12,10,0.05);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.form_checkbox.is-checked .form_checkbox-icon {
+  border-color: var(--color-text);
+  background-color: var(--color-text);
+}
+
+.form_checkbox-label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.form_checkbox-label a {
+  text-decoration: underline;
+}
+
+/* Submit */
+.button.is-form {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-text);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 100px;
+  padding: 0.875rem 2.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  align-self: flex-start;
+}
+
+.button.is-form:hover { opacity: 0.85; }
+.button.is-form:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Feedback */
+.form_feedback {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  display: none;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.form_feedback.is-success {
+  display: block;
+  background-color: #e6eff3;
+  color: #35464f;
+}
+
+.form_feedback.is-error {
+  display: block;
+  background-color: #fef3f2;
+  color: #b42318;
+}
+
+.padding-vertical.padding-xsmall { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.text-size-small { font-size: 0.875rem; }
+
+@media (max-width: 640px) {
+  .form_field-2col { grid-template-columns: 1fr; }
+  .form_radio-2col { grid-template-columns: 1fr; }
+  .button.is-form { width: 100%; }
+}
+</style>
+
+<script>
+// Turnstile callback
+(window as any).onTurnstileSuccess = function(_token: string) {
+  document.querySelectorAll<HTMLButtonElement>('.button.is-form').forEach(btn => {
+    btn.disabled = false;
+  });
+};
+
+// Radio visual state
+document.querySelectorAll<HTMLElement>('.form_radio').forEach(label => {
+  const input = label.querySelector<HTMLInputElement>('input[type="radio"]');
+  input?.addEventListener('change', () => {
+    const name = input.name;
+    document.querySelectorAll<HTMLElement>(`.form_radio`).forEach(l => {
+      const i = l.querySelector<HTMLInputElement>(`input[name="${name}"]`);
+      if (i) l.classList.toggle('is-checked', i.checked);
+    });
+  });
+});
+
+// Checkbox visual state
+document.querySelectorAll<HTMLElement>('.form_checkbox').forEach(label => {
+  const input = label.querySelector<HTMLInputElement>('input[type="checkbox"]');
+  input?.addEventListener('change', () => {
+    label.classList.toggle('is-checked', input.checked);
+  });
+});
+
+// Form submission
+document.querySelectorAll<HTMLFormElement>('.kontakt_formular-sektion_form').forEach(form => {
+  const formId = form.id;
+  const btn = document.getElementById(`${formId}-submit`) as HTMLButtonElement;
+  const feedback = document.getElementById(`${formId}-feedback`) as HTMLDivElement;
+  const tsField = document.getElementById(`ts-${formId}`) as HTMLInputElement;
+  const successMsg = form.dataset.success ?? 'Vielen Dank!';
+  const errorMsg = form.dataset.error ?? 'Etwas ist schiefgelaufen.';
+
+  const FORM_LOADED_AT = Date.now();
+  if (tsField) tsField.value = new Date().toISOString();
+  const MIN_FILL_MS = 3000;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if ((form.elements.namedItem('website_url') as HTMLInputElement)?.value) return;
+    if (Date.now() - FORM_LOADED_AT < MIN_FILL_MS) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Wird gesendet …';
+    feedback.className = 'form_feedback';
+    feedback.textContent = '';
+
+    const data: Record<string, string> = {};
+    new FormData(form).forEach((val, key) => {
+      if (key !== 'website_url' && key !== '_timestamp') {
+        data[key] = String(val);
+      }
+    });
+    data['website_url'] = '';
+    data['_timestamp'] = tsField?.value ?? '';
+    data['turnstile_token'] = (form.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement)?.value ?? '';
+    data['source'] = 'patricia-bachmann.de';
+
+    try {
+      const res = await fetch('https://n8n.polizen.app/webhook/patricia-bachmann-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      feedback.className = 'form_feedback is-success';
+      feedback.textContent = successMsg;
+      form.reset();
+      document.querySelectorAll<HTMLElement>('.form_radio, .form_checkbox').forEach(el => {
+        el.classList.remove('is-checked');
+      });
+      btn.textContent = 'Absenden';
+    } catch {
+      feedback.className = 'form_feedback is-error';
+      feedback.textContent = errorMsg;
+      btn.disabled = false;
+      btn.textContent = 'Absenden';
+    }
+  });
+});
+</script>

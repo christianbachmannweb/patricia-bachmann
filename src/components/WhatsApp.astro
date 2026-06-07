@@ -1,0 +1,72 @@
+---
+// WhatsApp-Chat-Widget (wie Startseite) — nur auf Mobile sichtbar.
+interface Props {
+  greeting?: string;
+}
+const { greeting = 'Hi 👋<br />Wie kann ich dir helfen?' } = Astro.props;
+---
+
+<div class="whatsapp-widget">
+  <div class="whatsapp-chat" id="chatBox">
+    <div class="chat-header">
+      <img src="/images/68f0b2a13f77fe3a88f5ebb1_whatsapp-chat-img.avif" alt="Avatar" />
+      <div>
+        <div class="name">Patricia</div>
+        <div class="status">Online</div>
+      </div>
+      <span class="close" id="wa-close-btn">×</span>
+    </div>
+    <div class="chat-body">
+      <div class="message bot" set:html={greeting}></div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="userMsg" placeholder="Nachricht eingeben..." />
+      <button id="wa-send-btn" aria-label="Senden">➤</button>
+    </div>
+  </div>
+  <button class="whatsapp-float" id="wa-toggle-btn" aria-label="WhatsApp Chat öffnen">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="" />
+  </button>
+</div>
+
+<style>
+.whatsapp-widget { position: fixed; bottom: 20px; right: 20px; z-index: 9999; font-family: sans-serif; }
+.whatsapp-float {
+  width: 60px; height: 60px; border-radius: 50%; background: #25D366; border: none;
+  display: flex; justify-content: center; align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,.3); cursor: pointer;
+}
+.whatsapp-float img { width: 32px; }
+.whatsapp-chat {
+  position: absolute; bottom: 80px; right: 0; width: 300px; background: #fff;
+  border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.3); overflow: hidden; display: none;
+}
+.chat-header { background: #075E54; color: #fff; padding: 10px; display: flex; align-items: center; gap: 10px; }
+.chat-header img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+.chat-header .name { font-weight: 600; }
+.chat-header .status { font-size: 0.75rem; opacity: 0.85; }
+.chat-header .close { margin-left: auto; cursor: pointer; font-size: 1.2rem; }
+.chat-body { padding: 10px; background: #ECE5DD; }
+.message.bot { background: #fff; border-radius: 10px; padding: 8px 10px; display: inline-block; max-width: 80%; }
+.chat-input { display: flex; border-top: 1px solid #ddd; }
+.chat-input input { flex: 1; padding: 10px; border: none; outline: none; }
+.chat-input button { background: #25D366; color: white; border: none; padding: 0 15px; cursor: pointer; font-size: 1rem; }
+@media (min-width: 769px) { .whatsapp-widget { display: none !important; } }
+</style>
+
+<script>
+  function toggleChat() {
+    const chat = document.getElementById('chatBox') as HTMLElement | null;
+    if (chat) chat.style.display = chat.style.display === 'block' ? 'none' : 'block';
+  }
+  function sendToWhatsApp() {
+    const msg = (document.getElementById('userMsg') as HTMLInputElement)?.value || 'Hallo 👋';
+    window.open(`https://wa.me/4971649152847?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+  document.getElementById('wa-toggle-btn')?.addEventListener('click', toggleChat);
+  document.getElementById('wa-close-btn')?.addEventListener('click', toggleChat);
+  document.getElementById('wa-send-btn')?.addEventListener('click', sendToWhatsApp);
+  document.getElementById('userMsg')?.addEventListener('keydown', (e) => {
+    if ((e as KeyboardEvent).key === 'Enter') sendToWhatsApp();
+  });
+</script>

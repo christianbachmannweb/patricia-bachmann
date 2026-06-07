@@ -1,0 +1,25 @@
+---
+import CityPage from '../../components/CityPage.astro';
+
+const faqs = [
+  { question: 'Fotografierst du in Kirchheim unter Teck?', answer: 'Ja, Kirchheim unter Teck gehört zu meinem Einzugsgebiet. Ich bin regelmäßig in der Region für Kindergärten und Schulen unterwegs.' },
+  { question: 'Wie kommen wir an Patricia als Fotografin?', answer: 'Entweder schlagen Eltern mich im Elternbeirat vor, oder die Einrichtung nimmt direkt Kontakt auf. Ich sende gerne Infomaterial zum Weitergeben.' },
+  { question: 'Was kostet die Kindergartenfotografie?', answer: 'Für die Einrichtung entstehen keine Kosten. Eltern bestellen ihre Lieblingsbilder erst im Nachgang online – kein Vorabgeld.' },
+  { question: 'Sind die Bilder DSGVO-konform?', answer: 'Ja. Alle Bilder werden sicher und DSGVO-konform über Fotograf.de verarbeitet und gespeichert – mit Servern in Deutschland.' },
+  { question: 'Wann sind die Fotos verfügbar?', answer: 'In der Regel etwa 2 Wochen nach dem Fototag. Die Kinder bekommen am Fototag einen QR-Code – darüber können Eltern die Bilder einsehen und bestellen.' },
+];
+---
+
+<CityPage
+  city="Kirchheim unter Teck"
+  citySlug="kirchheim-unter-teck"
+  lat={48.6467}
+  lng={9.4536}
+  intro="Kindergartenfotografie in Kirchheim unter Teck – Patricia Bachmann fotografiert Kinder natürlich und einfühlsam direkt in der Einrichtung."
+  beschreibung={`
+    <p>Kirchheim unter Teck und die umliegenden Gemeinden gehören zu meinem Einzugsgebiet. Als Kindergartenfotografin bin ich in der gesamten Region zwischen Göppingen und Stuttgart aktiv.</p>
+    <p>Was mich auszeichnet: Ich komme mit allem, was ich brauche – Set-Up, Requisiten, Beleuchtung. Kitas und Schulen in Kirchheim müssen sich um kaum etwas kümmern.</p>
+    <p>Die fertigen Bilder sind nach etwa 2 Wochen über ein sicheres Online-Portal abrufbar. Eltern wählen selbst aus und bestellen bequem von zuhause – ganz ohne Vorabgeld.</p>
+  `}
+  faqs={faqs}
+/>

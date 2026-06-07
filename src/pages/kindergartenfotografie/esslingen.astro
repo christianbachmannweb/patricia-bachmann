@@ -1,0 +1,25 @@
+---
+import CityPage from '../../components/CityPage.astro';
+
+const faqs = [
+  { question: 'Fotografierst du in Esslingen am Neckar?', answer: 'Ja, Esslingen gehört zu meinem Einzugsgebiet. Als Fotografin zwischen Göppingen und Stuttgart bin ich regelmäßig auch in Esslingen aktiv.' },
+  { question: 'Wie organisiere ich einen Fototag in Esslingen?', answer: 'Nehmt einfach Kontakt auf – ich erkläre alles Weitere und sende euch Infomaterial. Eltern können mich auch beim Kindergarten oder im Elternbeirat vorschlagen.' },
+  { question: 'Was kostet der Fototag für den Kindergarten?', answer: 'Für die Einrichtung entstehen keine Kosten. Die Eltern zahlen erst wenn sie die fertigen Bilder gesehen haben und kaufen möchten.' },
+  { question: 'Welche Pakete gibt es für Eltern?', answer: 'Es gibt verschiedene Pakete – von einzelnen Druckformaten bis hin zu Digital-Paketen mit allen Bildern zum Download. Details findet ihr auf der Pakete-Seite.' },
+  { question: 'Wie lange dauert es bis die Fotos fertig sind?', answer: 'In der Regel etwa 2 Wochen. Die Eltern erhalten dann per QR-Code Zugang zu ihren Bildern und können bequem online bestellen.' },
+];
+---
+
+<CityPage
+  city="Esslingen"
+  citySlug="esslingen"
+  lat={48.7394}
+  lng={9.3052}
+  intro="Zwischen Stuttgart und Göppingen: Patricia Bachmann bringt natürliche Kindergartenfotografie nach Esslingen am Neckar."
+  beschreibung={`
+    <p>Esslingen am Neckar liegt genau zwischen meinem Heimatort Hattenhofen und Stuttgart – ein Gebiet, in dem ich regelmäßig für Kindergärten und Schulen unterwegs bin.</p>
+    <p>Meine Bilder zeigen Kinder in ihrer ganzen Natürlichkeit. Kein künstliches Licht, keine erzwungenen Posen – nur echte Kindermomente, die Eltern ein Leben lang begleiten.</p>
+    <p>Für Einrichtungen in Esslingen ist der Ablauf einfach: Ich komme mit meinem Set-Up und organisiere alles selbst. Das Team muss kaum etwas vorbereiten.</p>
+  `}
+  faqs={faqs}
+/>
