@@ -8,7 +8,7 @@
 
 intro:
   eyebrow: "Hilfe"
-  heading: "Häufige Fragen zur Bildbestellung"
+  heading: "Häufige Fragen zur Bildbestellung und Fotograf.de"
   subtext: "Hier findest du Antworten auf die häufigsten Fragen rund um den Fototag, die Bildbestellung über Fotograf.de und technische Probleme. Nicht dabei? Schreib Patricia direkt."
 
 sections:
@@ -17,11 +17,11 @@ sections:
     heading: "QR-Code und Zugangsdaten"
     faqs:
       - question: "Ich habe meinen QR-Code verloren. Wie komme ich an meine Bilder?"
-        answer: "Schreib Patricia eine Nachricht mit dem Namen deines Kindes und dem Kindergarten bzw. der Schule. Sie kann dir einen neuen Zugangscode erstellen oder dir direkt den Link schicken."
+        answer: "Schreib Patricia eine Nachricht über E-Mail mit dem Namen deines Kindes und dem Kindergarten, sowie der Gruppe bzw. der Schule. Sie kann dir einen neuen Zugangscode erstellen oder dir direkt den Link schicken."
       - question: "Der QR-Code führt zu keiner Seite – was ist passiert?"
-        answer: "Prüfe zuerst, ob dein Internet aktiv ist. Falls ja, kontaktiere Patricia – sie schaut, ob der Link noch aktiv ist und schickt dir gegebenenfalls einen neuen."
+        answer: "Prüfe zuerst, ob dein Internet aktiv ist. Falls ja, kann es sein, dass die Bilder noch nicht freigeschalten sind. Du erhältst eine E-Mail, sobald die Bilder bei fotograf.de freigeschalten sind. Schau bitte auch in deinem Spam-Ordner nach."
       - question: "Ich sehe beim Öffnen nur Fotos von anderen Kindern."
-        answer: "Das kann passieren, wenn der QR-Code für eine ganze Gruppe gilt. Du siehst dann alle Gruppenfotos der Einrichtung. Einzelportraits deines Kindes findest du unter einem separaten Code – wenn du keinen erhalten hast, melde dich gerne bei Patricia."
+        answer: "Das sollte eigentlich nicht passieren. Bitte melde dich bei Patricia via E-Mail und gib deinen Name, den Name deines Kindes, den Kindergarten und Gruppe an."
       - question: "Wie lange ist der QR-Code gültig?"
         answer: "Die Bilder sind in der Regel mehrere Wochen nach dem Fototag abrufbar. Patricia informiert im Vorfeld, falls ein konkretes Ablaufdatum gilt."
 
@@ -30,20 +30,24 @@ sections:
     heading: "Bilder auswählen und bestellen"
     faqs:
       - question: "Wie bestelle ich Bilder?"
-        answer: "Öffne den QR-Code oder den Link, den dein Kind am Fototag bekommen hat. Du siehst alle verfügbaren Fotos. Wähle die gewünschten Bilder aus, leg sie in den Warenkorb und geh zur Kasse. Die Bezahlung läuft sicher über Fotograf.de."
+        answer: "Scanne den QR-Code oder gib den Link auf der QR-Karte, die dein Kind am Fototag bekommen hat. Du siehst alle verfügbaren Fotos. Wähle die gewünschten Pakete aus und stelle zum jeweiligen Paket deine Bilder individuell zusammen. Die Bezahlung erfolgt über Fotograf.de"
       - question: "Kann ich einzelne Bilder auswählen oder muss ich Pakete kaufen?"
         answer: "Beides ist möglich. Es gibt vordefinierte Pakete (z.&thinsp;B. Basis, Spar, Premium) – du kannst aber auch einzelne Formate dazubuchen. Die genauen Optionen siehst du direkt im Portal."
       - question: "Gibt es eine Mindestbestellmenge?"
-        answer: "Nein. Du musst nichts bestellen, wenn dir die Bilder nicht gefallen. Es gibt keine Verpflichtung und kein Vorabgeld. Die Eltern entscheiden selbst."
+        answer: "Nein. Du musst nichts bestellen, wenn dir die Bilder nicht gefallen. Es gibt keine Verpflichtung und kein Vorabgeld. Die Eltern entscheiden selbst. Es ist aber sinnvoll, dein Kind nur dann für den Fototag anzumelden, wenn du grundsätzlich Interesse an Bildern hast."
       - question: "Kann ich die Bestellung nachträglich ändern oder stornieren?"
-        answer: "Solange die Bestellung noch nicht in Produktion ist, schreib Patricia oder wende dich direkt an den Support von Fotograf.de. Nach Produktionsbeginn ist eine Stornierung in der Regel nicht mehr möglich."
+        answer: "Solange die Bestellung noch nicht in Produktion ist, schreib umgehend Patricia via E-Mail. Sobald die Bilder bezahlt sind, kann nur noch Patricia den Kauf versuchen zu stornieren. Beachte aber: Nach Produktionsbeginn ist eine Stornierung in der Regel nicht mehr möglich."
+      - question: "Was ist ein Sammelversand?"
+        answer: "Ein Sammelversand ist eine Versandoption, bei der bis zu einem bestimmten Stichtag gesammelt wird (in der Regel 2 Wochen). Danach werden die Bilder ans Labor übertragen und an die Einrichtung verschickt. Der Sammelversand erspart euch die Versandkosten. Allerdings werden die Bilder dann in den Kindergarten bzw. die Einrichtung geliefert und dort verteilt. Wenn du die Bilder schneller und direkt nach Hause haben möchtest, wähle den Direktversand."
+      - question: "Häufige Lösungen zum Sammelversand"    
+        answer: "Der Sammelversand startet mit der Freigabe der Bilder bei fotograf.de. Der Kindergarten muss dem Sammelversand zustimmen – das klärt Patricia im Vorfeld. Ihr erhaltet eine E-Mail, in der steht, wie viele Tage der Sammelversand noch gültig ist, z.&thinsp;B.: „Noch 2 Tage bis zum Ablauf des Sammelversands.""
 
   - id: "bezahlung"
     eyebrow: "Bezahlung"
     heading: "Bezahlung und Rechnung"
     faqs:
       - question: "Welche Zahlungsmethoden sind möglich?"
-        answer: "Fotograf.de akzeptiert unter anderem Kreditkarte (Visa, Mastercard), PayPal und SEPA-Lastschrift. Welche Optionen verfügbar sind, siehst du beim Checkout."
+        answer: "Wir bieten nur noch direkte Überweisung an. Die Bezahlung wird aber <b>immer</b> über fotograf.de abgewickelt."
       - question: "Ich bekomme eine Fehlermeldung bei der Bezahlung – was tun?"
         answer: "Prüfe zuerst deine Kartendaten bzw. ob ausreichend Limit vorhanden ist. Falls der Fehler bleibt, probiere eine andere Zahlungsmethode oder kontaktiere deinen Kreditkartenanbieter."
       - question: "Wo finde ich meine Rechnung?"
