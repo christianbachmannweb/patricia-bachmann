@@ -41,8 +41,8 @@ sections:
         answer: "Solange die Bestellung noch nicht in Produktion ist, schreib umgehend Patricia via E-Mail. Sobald die Bilder bezahlt sind, kann nur noch Patricia den Kauf versuchen zu stornieren. Beachte aber: Nach Produktionsbeginn ist eine Stornierung in der Regel nicht mehr möglich."
       - question: "Was ist ein Sammelversand?"
         answer: "Ein Sammelversand ist eine Versandoption, bei der bis zu einem bestimmten Stichtag gesammelt wird (in der Regel 2 Wochen). Danach werden die Bilder ans Labor übertragen und an die Einrichtung verschickt. Der Sammelversand erspart euch die Versandkosten. Allerdings werden die Bilder dann in den Kindergarten bzw. die Einrichtung geliefert und dort verteilt. Wenn du die Bilder schneller und direkt nach Hause haben möchtest, wähle den Direktversand."
-      - question: "Häufige Lösungen zum Sammelversand"    
-        answer: "Der Sammelversand startet mit der Freigabe der Bilder bei fotograf.de. Der Kindergarten muss dem Sammelversand zustimmen – das klärt Patricia im Vorfeld. Ihr erhaltet eine E-Mail, in der steht, wie viele Tage der Sammelversand noch gültig ist, z.&thinsp;B.: „Noch 2 Tage bis zum Ablauf des Sammelversands.""
+      - question: "Häufige Lösungen zum Sammelversand"
+        answer: 'Der Sammelversand startet mit der Freigabe der Bilder bei fotograf.de. Der Kindergarten muss dem Sammelversand zustimmen – das klärt Patricia im Vorfeld. Ihr erhaltet eine E-Mail, in der steht, wie viele Tage der Sammelversand noch gültig ist, z.&thinsp;B.: „Noch 2 Tage bis zum Ablauf des Sammelversands."'
 
   - id: "bezahlung"
     eyebrow: "Bezahlung"
