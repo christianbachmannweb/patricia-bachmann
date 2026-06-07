@@ -29,6 +29,8 @@ sections:
     eyebrow: "Bestellung"
     heading: "Bilder auswählen und bestellen"
     faqs:
+      - question: "Wie lang dauert es, bis wir die Bilder nach dem Fototag haben?"
+        answer: "In aller Regel dauert es bis zu zwei Wochen. Bitte seht davon ab, E-Mails nach 3 oder 4 Tagen zu schreiben, um zu Fragen, wann die Bilder fertig sind. Ihr werdet automatisch benachrichtigt, wenn die Bilder freigegeben sind. Schaut auch <b>immer</b> im SPAM-Ordner nach."
       - question: "Wie bestelle ich Bilder?"
         answer: "Scanne den QR-Code oder gib den Link auf der QR-Karte, die dein Kind am Fototag bekommen hat. Du siehst alle verfügbaren Fotos. Wähle die gewünschten Pakete aus und stelle zum jeweiligen Paket deine Bilder individuell zusammen. Die Bezahlung erfolgt über Fotograf.de"
       - question: "Kann ich einzelne Bilder auswählen oder muss ich Pakete kaufen?"
@@ -67,6 +69,8 @@ sections:
         answer: "Die Produktion dauert in der Regel 5–10 Werktage nach Bestelleingang. Dazu kommt die Versandzeit von 1–3 Werktagen. Du erhältst eine Versandbestätigung per E-Mail."
       - question: "Die Bildqualität beim Druck ist schlechter als erwartet – was kann ich tun?"
         answer: "Die Dateien von Fotograf.de sind in voller Auflösung und für den Druck optimiert. Falls die gelieferten Prints nicht deinen Erwartungen entsprechen, wende dich an den Support von Fotograf.de – sie helfen bei Reklamationen."
+      - question: "Kann ich die Wasserzeichen von den Bildern selbst entfernen?"
+        answer: 'Die Wasserzeichen aus den Bildern werden mit dem Kauf direkt entfernt. Wenn du die Bilder über einen "Screenshot" illegal beziehst, begehst du eine Straftat. Da Wasserzeichen nur mit Hilfe einer KI entfernt werden können, stellt der Upload in eine KI eine weitere Straftat dar. Straftaten wie Bilddiebstahl oder DSGVO-Verstöße werden von Patricia strafrechtlich zur Anzeige gebracht und an entsprechende Stellen gemeldet.'
 
   - id: "technik"
     eyebrow: "Technische Probleme"
