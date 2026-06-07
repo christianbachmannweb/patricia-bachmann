@@ -99,7 +99,7 @@ const {
   <div class="padding-vertical padding-xsmall">
     <div class="form_field-wrapper">
       <div class="form_field-label" style="margin-bottom:0.75rem;">Als was fragst du an?</div>
-      <div class="form_radio-2col">
+      <div class="form_radio-3col">
         <label class="form_radio">
           <div class="form_radio-icon"></div>
           <input
@@ -119,6 +119,16 @@ const {
             value="Elternteil"
           />
           <span class="form_radio-label">Elternteil</span>
+        </label>
+        <label class="form_radio">
+          <div class="form_radio-icon"></div>
+          <input
+            type="radio"
+            name="Wer-fragt-an"
+            id={`${formId}-elternbeirat`}
+            value="Elternbeirat"
+          />
+          <span class="form_radio-label">Elternbeirat</span>
         </label>
       </div>
     </div>
@@ -250,6 +260,12 @@ const {
 .form_radio-2col {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.form_radio-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 0.75rem;
 }
 
