@@ -42,6 +42,8 @@ const content = readFileSync(join(process.cwd(), 'src/data/datenschutz.html'), '
 .legal-content {
   max-width: 720px;
   line-height: 1.8;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .legal-content :global(h1) {
   font-family: var(--font-heading);
