@@ -31,6 +31,48 @@ const howToSchema = JSON.stringify({
   }))
 });
 
+const localBusinessSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "ProfessionalService", "Photographer"],
+  "@id": "https://www.patricia-bachmann.de/#business",
+  "name": "Patricia Bachmann Kindergarten- & Schulfotografie",
+  "description": "Einfühlsame Kindergarten- und Schulfotografie in Göppingen und Umgebung – natürlich, unkompliziert, wertvoll.",
+  "url": "https://www.patricia-bachmann.de",
+  "telephone": "+4971649152847",
+  "email": "hallo@patricia-bachmann.de",
+  "image": "https://www.patricia-bachmann.de/images/68f5d97ee5fc6b9192115130_Vavrova-Photography-1.jpg",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Lachgasse 4",
+    "addressLocality": "Hattenhofen",
+    "addressRegion": "Baden-Württemberg",
+    "postalCode": "73110",
+    "addressCountry": "DE"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 48.6675604, "longitude": 9.5809271 },
+  "areaServed": [
+    {"@type": "City", "name": "Göppingen"},
+    {"@type": "City", "name": "Hattenhofen"},
+    {"@type": "City", "name": "Stuttgart"},
+    {"@type": "City", "name": "Ulm"},
+    {"@type": "City", "name": "Esslingen am Neckar"},
+    {"@type": "City", "name": "Kirchheim unter Teck"},
+    {"@type": "City", "name": "Geislingen an der Steige"},
+    {"@type": "City", "name": "Ebersbach an der Fils"},
+    {"@type": "City", "name": "Eislingen"},
+    {"@type": "City", "name": "Süßen"},
+    {"@type": "City", "name": "Schwäbisch Gmünd"}
+  ],
+  "sameAs": [
+    "https://www.instagram.com/kindergartenfotografie_pb/",
+    "https://www.facebook.com/patriciabachmannkindergartenfotografie",
+    "https://maps.google.com/?cid=5398835118567909112"
+  ],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "13" },
+  "founder": { "@type": "Person", "name": "Patricia Bachmann", "jobTitle": "Kindergarten- & Schulfotografin" }
+});
+
 const siteSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -45,6 +87,8 @@ const reviewSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": "https://www.patricia-bachmann.de/#business",
+  "name": "Patricia Bachmann Kindergarten- & Schulfotografie",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "13" },
   "review": [
     {
       "@type": "Review",
@@ -169,47 +213,7 @@ const galleryImages = [
   <link rel="icon" href="/images/68f693e4a34b49b0779b4f31_favicon-32x32.png" type="image/png" />
   <link rel="apple-touch-icon" href="/images/68f6942db4d0e09d8a747738_webclip-patricia-bachmann.png" />
   <!-- Schema: LocalBusiness -->
-  <script type="application/ld+json" is:inline>{JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService", "Photographer"],
-    "@id": "https://www.patricia-bachmann.de/#business",
-    "name": "Patricia Bachmann Kindergarten- & Schulfotografie",
-    "description": "Einfühlsame Kindergarten- und Schulfotografie in Göppingen und Umgebung – natürlich, unkompliziert, wertvoll.",
-    "url": "https://www.patricia-bachmann.de",
-    "telephone": "+4971649152847",
-    "email": "hallo@patricia-bachmann.de",
-    "image": "https://www.patricia-bachmann.de/images/68f5d97ee5fc6b9192115130_Vavrova-Photography-1.jpg",
-    "priceRange": "€€",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Lachgasse 4",
-      "addressLocality": "Hattenhofen",
-      "addressRegion": "Baden-Württemberg",
-      "postalCode": "73110",
-      "addressCountry": "DE"
-    },
-    "geo": { "@type": "GeoCoordinates", "latitude": 48.6675604, "longitude": 9.5809271 },
-    "areaServed": [
-      {"@type": "City", "name": "Göppingen"},
-      {"@type": "City", "name": "Hattenhofen"},
-      {"@type": "City", "name": "Stuttgart"},
-      {"@type": "City", "name": "Ulm"},
-      {"@type": "City", "name": "Esslingen am Neckar"},
-      {"@type": "City", "name": "Kirchheim unter Teck"},
-      {"@type": "City", "name": "Geislingen an der Steige"},
-      {"@type": "City", "name": "Ebersbach an der Fils"},
-      {"@type": "City", "name": "Eislingen"},
-      {"@type": "City", "name": "Süßen"},
-      {"@type": "City", "name": "Schwäbisch Gmünd"}
-    ],
-    "sameAs": [
-      "https://www.instagram.com/kindergartenfotografie_pb/",
-      "https://www.facebook.com/patriciabachmannkindergartenfotografie",
-      "https://maps.google.com/?cid=5398835118567909112"
-    ],
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "13" },
-    "founder": { "@type": "Person", "name": "Patricia Bachmann", "jobTitle": "Kindergarten- & Schulfotografin" }
-  })}</script>
+  <script type="application/ld+json" is:inline set:html={localBusinessSchema} />
   <!-- Schema: FAQPage -->
   <script type="application/ld+json" is:inline set:html={faqSchema} />
   <script type="application/ld+json" is:inline set:html={howToSchema} />
