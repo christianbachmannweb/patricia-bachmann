@@ -1,8 +1,8 @@
 ---
-title: 'So läuft ein Kindergarten-Fototag ab – und wie du Patricia vorschlägst'
+title: 'So läuft ein Kindergarten-Fototag ab – und wie du uns vorschlägst'
 description: 'Als Elternteil eine Fotografin vorschlagen? Hier ist wie es geht – vom Elternbeirat bis zu den fertigen Bildern. Inkl. Kita-Checkliste zum Weiterschicken.'
 pubDate: 2026-06-10
-ctaHeading: 'Patricia in deiner Kita vorschlagen?'
+ctaHeading: 'Patricia und ihr Team in deiner Kita vorschlagen?'
 ctaBody: 'Schreib uns kurz – wir schicken dir Unterlagen für den Elternbeirat oder beantworten deine Fragen direkt.'
 faqs:
   - question: 'Wie schlage ich eine Fotografin dem Elternbeirat vor?'
@@ -21,19 +21,17 @@ Ja. Und es ist einfacher als du denkst.
 
 ## Das Wichtigste auf einen Blick
 
-> Wer eine Fotografin dem Elternbeirat vorschlagen möchte, schreibt kurz eine Nachricht an Patricia – sie schickt alle Unterlagen. Nach der Zusage koordiniert Patricia Termin und Ablauf mit der Einrichtung direkt. Am Fototag bringt sie alles mit. Eltern zahlen nichts vorab – erst nach Ansicht der fertigen Bilder.
+> Wer Patricia dem Elternbeirat vorschlagen möchte, schreibt kurz eine Nachricht – sie schickt alle Unterlagen. Patricia klärt Termin, DSGVO-Konformität und Ablauf direkt mit der Einrichtung. Am Fototag bringt sie alles mit. Für Eltern gibt es keine Abnahmepflicht – gezahlt wird erst nach Ansicht der fertigen Bilder.
 
 ---
 
 ## Wie du Patricia vorschlägst
 
-Es gibt zwei Wege wie Patricia in eine Einrichtung kommt.
+Es gibt zwei Wege wie Patricia und ihr Team in eine Einrichtung kommt.
 
-**Weg 1: Du sprichst den Elternbeirat an**
+**Weg 1: Du sprichst den Elternbeirat direkt an**
 
-Ein kurzer Hinweis beim nächsten Elternabend oder per Nachricht reicht: *„Ich habe von Patricia Bachmann gehört – sie fotografiert Kindergärten in der Region. Für die Einrichtung entstehen keine Kosten, Eltern zahlen erst nach Ansicht der Bilder."*
-
-Wenn du möchtest, schreib Patricia kurz an – sie schickt dir Infomaterial das du dem Elternbeirat zeigen kannst: Beispielbilder, Ablaufbeschreibung, Paketinfos.
+Ein kurzer Hinweis zum Beispiel beim nächsten Elternabend oder per WhatsApp reicht: *„Ich habe von Patricia Bachmann gehört – sie fotografiert Kindergärten in der Region. Für die Einrichtung entstehen keine Kosten, Eltern zahlen erst nach Ansicht der Bilder."* Du kannst auch immer den Link von der Homepage mitsenden. Denn auf der Homepage sind die [Preise](/pakete) und Beispielbilder aufgeführt.
 
 **Weg 2: Die Einrichtung nimmt direkt Kontakt auf**
 
@@ -45,43 +43,49 @@ Manche Einrichtungen buchen über die Leitung oder eine Erzieherin. Wenn du wei�
 
 ## Was vor dem Fototag passiert
 
-Nach der Zusage übernimmt Patricia die Koordination. Sie meldet sich bei der Einrichtung, bespricht den Termin und klärt alles was gebraucht wird.
+Wenn ein gemeinsamer Termin gefunden wurde übernimmt Patricia die Koordination mit der Einrichtung. Über E-Mail werden die Kindergartengruppen oder Schulklassen abgefragt und die einzelnen Gruppen und Klassen in fotograf.de angelegt. 
 
-Die Kita bekommt ein **Infoblatt für die Eltern** – Patricia stellt es bereit, die Einrichtung verteilt es. Darin steht wann der Fototag ist, was Kinder anziehen können und wie die Bestellung später funktioniert.
+Ca. 2-3 Wochen vor dem Fototag wird über die Einrichtung eine Mail an die Eltern versendet. Alternativ kommt die Info auch über die entsprechende Kita-App (z. B. StayInformed-App). In dieser App steht der genaue Ablauf zur Anmeldung des Kindes in der richtigen Gruppe. Wichtig ist zu erwähnen, dass nur angemeldete Kinder am Fototag auch fotografiert werden dürfen. 
 
-Für einen reibungslosen Ablauf hilft es wenn die Einrichtung zusätzlich:
+Patricia ist es wichtig, dass der Kindergarten **im Vorfeld so wenig Arbeit wie möglich** hat und das Tagesgeschäft nicht zu sehr beeinträchtigt wird. 
 
-- eine **Reihenfolge** für die Gruppen festlegt
-- einen **Raum** reserviert (mind. 3×3m, gutes Tageslicht oder neutrale Wand)
-- Geschwisterkinder in einer Liste festhält
-
-Das klingt nach viel – ist es aber nicht. Weiter unten gibt es dafür eine Checkliste die du einfach weiterschicken kannst.
 
 ---
 
 ## Am Fototag
 
-Patricia kommt mit allem was sie braucht: Licht, Hintergrund, Zubehör. Es muss nichts vorbereitet werden – kein Tisch, keine Dekoration, kein Stuhl.
+Patricia kommt mit allem was sie braucht: Licht, Hintergrund, Zubehör. Es muss nichts vorbereitet werden – kein Tisch, keine Dekoration, kein Stuhl. 
+
+Was bisher immer nützlich war: Ein Raum der als Ersatz möglich ist, wenn es am Fototag regnen sollte. 
+
+Ein wichtiger Hinweis: Am Fototag selbst, sollten keine Mäharbeiten oder ähnliches im Kindergarten stattfinden. Die Kinder sind dadurch meist sehr abgelenkt - klar, so ein Mähtraktor ist spannend. 
 
 **Wie die Erzieherinnen helfen können:**
 
 - Kinder in kleinen Gruppen heranbringen – nicht alle auf einmal
+- Darauf achten, dass die Kinder bereits gerichtet sind
 - Geschwister rechtzeitig zusammenführen
 - Reihenfolge im Blick behalten – wer vorbereitet ist, spart viel Zeit
+- Schüchterne Kinder mit mutigeren zusammen mischen
 
-Für Kinder die schüchtern sind: Patricia ist das gewohnt. Kein Kind wird gedrängt. Meistens entspannen sie sich schnell wenn sie sehen was die anderen machen.
+
+Für Kinder die schüchtern sind: Patricia ist das gewohnt. Kein Kind wird gedrängt. Meistens entspannen sie sich schnell wenn sie sehen was die anderen machen. Die Kinder werden spielerisch an die Bilder herangeführt. 
 
 ---
 
 ## Nach dem Fototag
 
-Jedes Kind bekommt am Fototag einen **persönlichen QR-Code**.
+Jedes Kind bekommt am Fototag einen **persönlichen QR-Code**. Diese Karte sollen die Eltern unbedingt behalten. Und sollte sie doch einmal verloren gehen, schreibt bitte eine E-Mail an Patricia.
 
-Etwa **2 Wochen später** sind die Bilder fertig und online. Eltern scannen den Code, sehen die Fotos ihres Kindes – und bestellen was sie möchten. Oder auch nichts.
+Etwa **2 Wochen später** sind die Bilder fertig und online. Dazu bekommen alle Eltern eine E-Mail in der steht, dass die Bilder zur Verfügung stehen. 
+
+Eltern scannen dann den QR-Code der Karte, sehen die Fotos ihres Kindes – und bestellen was sie möchten. Oder auch nichts. 
 
 Kein Umschlag mit Geld, keine Umlaufmappe, keine Mindestbestellung.
 
 **Frühbucher-Tipp:** In den ersten Wochen nach dem Fototag gibt es manchmal eine Aktion mit Rabatt. Es lohnt sich früh zu schauen.
+
+Wenn du Hilfe zur Plattform oder dem Bestellprozess brauchst, dann schau auch mal auf [Hilfe](/hilfe) vorbei. Dort sind die meisten Probleme und deren Lösungen aufgelistet.
 
 ---
 
