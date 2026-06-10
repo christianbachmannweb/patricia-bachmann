@@ -97,9 +97,11 @@ Dieser Gedanke ist verständlich. Aber ein paar Überlegungen:
 
 ## Warum manche Fotografen keine Preise zeigen
 
-Nicht alle Fotografen zeigen ihre Preise offen. Manche verlangen eine Anfrage bevor man überhaupt eine Zahl sieht.
+Die Antwort ist einfach: Angst. Wer Preise versteckt, hofft dass der Erstkontakt stattfindet bevor der Preis abschreckt. Die Idee dahinter: erst kennenlernen, dann Vertrauen aufbauen – und den Preis erst nennen wenn es schon zu spät ist umzukehren.
 
-Bei Patricia Bachmann siehst du alles vorher – alle [Pakete und Preise](/pakete) sind öffentlich einsehbar. Keine versteckten Kosten, keine Überraschungen am Fototag. Wer transparent mit Preisen umgeht, hat nichts zu verstecken.
+Das Problem: Diese Strategie funktioniert oft auf Kosten der Eltern. Wer einen günstigen Fotografen wählt, zahlt manchmal doppelt – einmal für Fotos die nicht gefallen, und einmal weil der Kindergartenmoment nicht wiederholbar ist. Die Opportunitätskosten eines schlechten Fotos sind höher als der gesparte Betrag.
+
+Patricia zeigt ihre Preise weil sie hinter ihrer Arbeit steht – und weil das Modell es erlaubt: kein Vorabgeld, keine Mindestbestellung. Wer die Bilder nicht mag, zahlt nichts. Wer anfrägt obwohl er die Preise kennt, hat echtes Interesse. Das spart beiden Seiten Zeit – und führt zu Buchungen die wirklich passen.
 
 ---
 
