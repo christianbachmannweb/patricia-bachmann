@@ -20,7 +20,9 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const { title, description, pubDate, faqs } = post.data;
+const { title, description, pubDate, faqs, ctaHeading, ctaBody } = post.data;
+const resolvedCtaHeading = ctaHeading ?? 'Neugierig auf Patricias Pakete?';
+const resolvedCtaBody = ctaBody ?? 'Alle Formate, Preise und Pakete auf einen Blick – oder direkt Verfügbarkeit anfragen.';
 
 const canonicalUrl = `https://www.patricia-bachmann.de/blog/${post.id}`;
 
@@ -110,8 +112,8 @@ const formattedDate = pubDate.toLocaleDateString('de-DE', {
         )}
 
         <section class="blog-cta scroll-reveal">
-          <h2 class="heading-style-h3">Neugierig auf Patricias Pakete?</h2>
-          <p>Alle Formate, Preise und Pakete auf einen Blick – oder direkt Verfügbarkeit anfragen.</p>
+          <h2 class="heading-style-h3">{resolvedCtaHeading}</h2>
+          <p>{resolvedCtaBody}</p>
           <div class="blog-cta-buttons">
             <a href="/pakete" class="button is-link">Alle Pakete & Preise ansehen →</a>
             <a href="/kontakt" class="button">
@@ -242,6 +244,56 @@ const formattedDate = pubDate.toLocaleDateString('de-DE', {
 .button--image { width:2.25rem; height:2.25rem; border-radius:50%; object-fit:cover; flex-shrink:0; }
 .button.is-link { background:none; border:none; padding:0.25rem 0; }
 .button.is-link:hover { text-decoration:underline; background-image:none; }
+
+/* Kita-Checkliste */
+.kita-checklist {
+  background: var(--color-bg-2);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  margin: 2rem 0;
+}
+.kita-checklist__title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.kita-checklist__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+  color: var(--color-text-mid);
+  cursor: pointer;
+  line-height: 1.5;
+  transition: color 0.15s;
+}
+.kita-checklist__item:last-of-type { border-bottom: none; }
+.kita-checklist__item input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.15rem;
+  accent-color: var(--color-glacier-dark);
+  cursor: pointer;
+}
+.kita-checklist__item:has(input:checked) {
+  color: var(--color-text);
+  text-decoration: line-through;
+  text-decoration-color: var(--color-glacier-dark);
+}
+.kita-checklist__note {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--color-text-mid);
+  font-style: italic;
+}
 
 @media (max-width: 640px) {
   .blog-main { padding-top: 4rem; padding-bottom: 4rem; }
