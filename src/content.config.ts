@@ -15,6 +15,8 @@ const blog = defineCollection({
       question: z.string(),
       answer: z.string(),
     })).optional(),
+    ctaHeading: z.string().optional(),
+    ctaBody: z.string().optional(),
   }),
 });
 
