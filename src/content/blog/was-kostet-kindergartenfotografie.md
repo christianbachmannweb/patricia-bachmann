@@ -105,4 +105,4 @@ Patricia zeigt ihre Preise weil sie hinter ihrer Arbeit steht – und weil das M
 
 ---
 
-*Möchtest du Patricia in deinem Kindergarten vorschlagen? Bald erscheint hier: „Als Elternteil einen Fotografen vorschlagen – so geht's über den Elternbeirat."*
+*Möchtest du Patricia in deinem Kindergarten vorschlagen? [So läuft ein Fototag ab – und wie du Patricia vorschlägst →](/blog/fototag-ablauf-checkliste)*
