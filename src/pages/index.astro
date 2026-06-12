@@ -70,25 +70,6 @@ const localBusinessSchema = JSON.stringify({
     "https://maps.google.com/?cid=5398835118567909112"
   ],
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "13" },
-  "founder": { "@type": "Person", "name": "Patricia Bachmann", "jobTitle": "Kindergarten- & Schulfotografin" }
-});
-
-const siteSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://www.patricia-bachmann.de/#website",
-  "name": "Patricia Bachmann Kindergartenfotografie",
-  "url": "https://www.patricia-bachmann.de",
-  "inLanguage": "de-DE",
-  "publisher": { "@id": "https://www.patricia-bachmann.de/#business" }
-});
-
-const reviewSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://www.patricia-bachmann.de/#business",
-  "name": "Patricia Bachmann Kindergartenfotografie",
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "13" },
   "review": [
     {
       "@type": "Review",
@@ -102,8 +83,20 @@ const reviewSchema = JSON.stringify({
       "author": { "@type": "Person", "name": "Verena Schneider" },
       "reviewBody": "Einfach wunderschöne Fotos und ein liebevoller Umgang mit den Kindergarten Kindern!"
     }
-  ]
+  ],
+  "founder": { "@type": "Person", "name": "Patricia Bachmann", "jobTitle": "Kindergarten- & Schulfotografin" }
 });
+
+const siteSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.patricia-bachmann.de/#website",
+  "name": "Patricia Bachmann Kindergartenfotografie",
+  "url": "https://www.patricia-bachmann.de",
+  "inLanguage": "de-DE",
+  "publisher": { "@id": "https://www.patricia-bachmann.de/#business" }
+});
+
 import '@fontsource/ubuntu/300.css';
 import '@fontsource/ubuntu/400.css';
 import '@fontsource/ubuntu/500.css';
@@ -218,7 +211,6 @@ const galleryImages = [
   <script type="application/ld+json" is:inline set:html={faqSchema} />
   <script type="application/ld+json" is:inline set:html={howToSchema} />
   <script type="application/ld+json" is:inline set:html={siteSchema} />
-  <script type="application/ld+json" is:inline set:html={reviewSchema} />
   <script defer data-domain="patricia-bachmann.de" src="https://plausible.polizen.app/js/script.file-downloads.hash.outbound-links.pageview-props.tagged-events.js"></script>
   <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 </head>
