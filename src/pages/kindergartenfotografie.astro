@@ -3,6 +3,7 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import WhatsApp from '../components/WhatsApp.astro';
 import FAQ from '../components/FAQ.astro';
+import Photo from '../components/Photo.astro';
 import '../styles/global.css';
 import '@fontsource/ubuntu/400.css';
 import '@fontsource/ubuntu/500.css';
@@ -189,7 +190,7 @@ const heroImages = [
               <div class="startseite_hero-header-sektion_image-list">
                 {heroImages.slice(0, 4).map((img, i) => (
                   <div class="startseite_hero-header-sektion_image-wrapper">
-                    <img src={`/images/${img}`} alt="Kindergartenfoto" class="startseite_hero-header-sektion_image" fetchpriority={copy === 0 && i === 0 ? 'high' : undefined} loading={copy === 0 && i === 0 ? 'eager' : 'lazy'} />
+                    <Photo src={img} alt="Kindergartenfotografie Göppingen – natürliches Kinderfoto" class="startseite_hero-header-sektion_image" fetchpriority={copy === 0 && i === 0 ? 'high' : undefined} loading={copy === 0 && i === 0 ? 'eager' : 'lazy'} />
                   </div>
                 ))}
               </div>
@@ -201,7 +202,7 @@ const heroImages = [
               <div class="startseite_hero-header-sektion_image-list">
                 {heroImages.slice(4, 8).map((img) => (
                   <div class="startseite_hero-header-sektion_image-wrapper">
-                    <img src={`/images/${img}`} alt="Kindergartenfoto" class="startseite_hero-header-sektion_image" loading="lazy" />
+                    <Photo src={img} alt="Kindergartenfotografie Göppingen – Kinderporträt beim Fototag" class="startseite_hero-header-sektion_image" loading="lazy" />
                   </div>
                 ))}
               </div>
@@ -249,9 +250,9 @@ const heroImages = [
             <a href="/pakete" class="button is-link scroll-reveal" style="margin-top:1.5rem;">Mehr zum Prozess →</a>
           </div>
           <div class="kindergartenfotografie_uber-uns-sektion_image-wrapper scroll-reveal">
-            <img
-              src="/images/6901d36db64f6528c284a3af_vavrova-photography-139-4.avif"
-              alt="Kindergartenfotografie – liebevolle Kinderporträts"
+            <Photo
+              src="6901d36db64f6528c284a3af_vavrova-photography-139-4.avif"
+              alt="Kindergartenfotografie – liebevolle Kinderporträts in Göppingen"
               class="uber-uns-image"
               loading="lazy"
             />
@@ -302,7 +303,7 @@ const heroImages = [
           ].map(step => (
             <div class="zeitleiste-item scroll-reveal">
               <div class="zeitleiste-image-wrapper">
-                <img src={`/images/${step.img}`} alt={step.title} class="zeitleiste-image" loading="lazy" />
+                <Photo src={step.img} alt={`Kindergartenfotografie Göppingen – ${step.title}`} class="zeitleiste-image" loading="lazy" />
               </div>
               <div class="zeitleiste-text">
                 <span class="zeitleiste-num">{step.n}</span>
@@ -394,9 +395,9 @@ const heroImages = [
   <section class="section_kindergartenfotografie_cta-sektion">
     <div class="kindergartenfotografie_cta-sektion_component">
       <div class="kindergartenfotografie_cta-sektion_image-wrapper">
-        <img
-          src="/images/68f68f4952e4761f0c43db9f_vavrova-photography-140-von-284-1.avif"
-          alt="Kindergartenfotografie"
+        <Photo
+          src="68f68f4952e4761f0c43db9f_vavrova-photography-140-von-284-1.avif"
+          alt="Kindergartenfotografie in Göppingen – Kind beim Fototag"
           class="kita-cta-image"
           loading="lazy"
         />

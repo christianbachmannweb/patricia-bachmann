@@ -2,6 +2,7 @@
 import Nav from './Nav.astro';
 import Footer from './Footer.astro';
 import FAQ from './FAQ.astro';
+import Photo from './Photo.astro';
 import '../styles/global.css';
 import '@fontsource/ubuntu/400.css';
 import '@fontsource/ubuntu/500.css';
@@ -120,8 +121,8 @@ const faqSchema = JSON.stringify({
           </a>
         </div>
         <div class="city-about__img-wrap">
-          <img
-            src="/images/68f0b172feff18808d2a454a_team-pati_patricia-bachmann-kindergartenfotografie.avif"
+          <Photo
+            src="68f0b172feff18808d2a454a_team-pati_patricia-bachmann-kindergartenfotografie.avif"
             alt={`Kindergartenfotografin Patricia Bachmann aus dem Raum Göppingen – fotografiert auch in ${city}`}
             class="city-about__img"
             loading="lazy"

@@ -3,3 +3,4 @@ Allow: /
 Disallow: /404
 
 Sitemap: https://www.patricia-bachmann.de/sitemap-index.xml
+Sitemap: https://www.patricia-bachmann.de/image-sitemap.xml

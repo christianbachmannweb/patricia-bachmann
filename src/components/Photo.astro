@@ -1,0 +1,32 @@
+---
+// Rendert <picture> mit AVIF-Source + WebP-Fallback-<img>.
+// Browser bekommt schnelles AVIF, Google Bilder indexiert den WebP-<img>.
+// `src` ist der Bild-Dateiname in /images (mit oder ohne Endung).
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  loading?: 'eager' | 'lazy';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  decoding?: 'sync' | 'async' | 'auto';
+  style?: string;
+  width?: number;
+  height?: number;
+}
+const { src, alt, class: className, loading = 'lazy', fetchpriority, decoding = 'async', style, width, height } = Astro.props;
+const base = src.replace(/^\/images\//, '').replace(/\.(avif|webp|jpe?g|png)$/i, '');
+---
+<picture>
+  <source srcset={`/images/${base}.avif`} type="image/avif" />
+  <img
+    src={`/images/${base}.webp`}
+    alt={alt}
+    class={className}
+    loading={loading}
+    fetchpriority={fetchpriority}
+    decoding={decoding}
+    style={style}
+    width={width}
+    height={height}
+  />
+</picture>

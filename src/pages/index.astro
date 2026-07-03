@@ -2,6 +2,7 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import FAQ from '../components/FAQ.astro';
+import Photo from '../components/Photo.astro';
 import { getEntry } from 'astro:content';
 import '../styles/global.css';
 
@@ -168,15 +169,15 @@ const stripImages = [
 ];
 
 const galleryImages = [
-  { src: '68f68f4a2cb959ad0eeeaa3b_Vavrova-Photography-6-von-132.avif', alt: 'Kindergartenfotografie', location: 'Michaelis Kindergarten' },
-  { src: '68f5d97ee5fc6b9192115130_Vavrova-Photography-1.avif', alt: 'Kinderfoto', location: 'Kindergarten Hattenhofen' },
-  { src: '68f68f4afaf2bd81bdb18c89_Vavrova-Photography-105-von-250.avif', alt: 'Kindergartenportrait', location: 'Kindergarten Ebersbach' },
-  { src: '68fdf8f5e79a1b8bcd591a8e_PHOTO-2025-10-22-10-27-56-3.avif', alt: 'Schulfotografie', location: 'Meerbach Grundschule' },
-  { src: '68f68f49083ef945245f7dbd_Vavrova-Photography-68-von-284.avif', alt: 'Kinderfoto natürlich', location: 'Michaelis Kindergarten' },
-  { src: '6901d149a95c48ea51e96e4c_Vavrova-Photography-63-von-330.avif', alt: 'Kindergartengruppe', location: 'Kindergarten Hattenhofen' },
-  { src: '68f68f4952e4761f0c43db9f_vavrova-photography-140-von-284-1.avif', alt: 'Portrait Kind', location: 'Kindergarten Ebersbach' },
-  { src: '68f68f491fc5d5861ffa4d73_Vavrova-Photography-134-von-284.avif', alt: 'Schulportrait', location: 'Blumhard-Haus' },
-  { src: '68f5d97f50a691f540134fe5_Vavrova_Photography-207.avif', alt: 'Kindergartenfotos', location: 'Kindergarten Hattenhofen' },
+  { src: '68f68f4a2cb959ad0eeeaa3b_Vavrova-Photography-6-von-132.avif', alt: 'Kindergartenfotografie im Michaelis Kindergarten Göppingen – natürliches Kinderporträt', location: 'Michaelis Kindergarten' },
+  { src: '68f5d97ee5fc6b9192115130_Vavrova-Photography-1.avif', alt: 'Kinderfoto beim Fototag im Kindergarten Hattenhofen', location: 'Kindergarten Hattenhofen' },
+  { src: '68f68f4afaf2bd81bdb18c89_Vavrova-Photography-105-von-250.avif', alt: 'Kindergartenfotografie im Kindergarten Ebersbach – Porträt eines Kindes', location: 'Kindergarten Ebersbach' },
+  { src: '68fdf8f5e79a1b8bcd591a8e_PHOTO-2025-10-22-10-27-56-3.avif', alt: 'Schulfotografie an der Meerbach Grundschule in Göppingen', location: 'Meerbach Grundschule' },
+  { src: '68f68f49083ef945245f7dbd_Vavrova-Photography-68-von-284.avif', alt: 'Natürliches Kinderfoto im Michaelis Kindergarten Göppingen', location: 'Michaelis Kindergarten' },
+  { src: '6901d149a95c48ea51e96e4c_Vavrova-Photography-63-von-330.avif', alt: 'Kindergarten-Gruppenfoto im Kindergarten Hattenhofen', location: 'Kindergarten Hattenhofen' },
+  { src: '68f68f4952e4761f0c43db9f_vavrova-photography-140-von-284-1.avif', alt: 'Kinderporträt beim Fototag im Kindergarten Ebersbach', location: 'Kindergarten Ebersbach' },
+  { src: '68f68f491fc5d5861ffa4d73_Vavrova-Photography-134-von-284.avif', alt: 'Schulporträt im Blumhard-Haus Göppingen', location: 'Blumhard-Haus' },
+  { src: '68f5d97f50a691f540134fe5_Vavrova_Photography-207.avif', alt: 'Kindergartenfotos vom Fototag im Kindergarten Hattenhofen – Fotografin Patricia Bachmann', location: 'Kindergarten Hattenhofen' },
 ];
 ---
 
@@ -260,10 +261,10 @@ const galleryImages = [
             {[0, 1].map(() => (
               <div class="startseite_hero-header-sektion_image-list">
                 <div class="startseite_hero-header-sektion_image-wrapper">
-                  <img src="/images/68f5d97f50a691f540134fe5_Vavrova_Photography-207.avif" alt="Kindergartenfoto" class="startseite_hero-header-sektion_image" fetchpriority="high" loading="eager" />
+                  <Photo src="68f5d97f50a691f540134fe5_Vavrova_Photography-207.avif" alt="Kindergartenfotografie Göppingen – Kind beim Fototag im Freien" class="startseite_hero-header-sektion_image" fetchpriority="high" loading="eager" />
                 </div>
                 <div class="startseite_hero-header-sektion_image-wrapper">
-                  <img src="/images/68f5d97ee5fc6b9192115130_Vavrova-Photography-1.avif" alt="Kindergartenfoto" class="startseite_hero-header-sektion_image" loading="lazy" />
+                  <Photo src="68f5d97ee5fc6b9192115130_Vavrova-Photography-1.avif" alt="Natürliches Kinderporträt der Kindergartenfotografin Patricia Bachmann" class="startseite_hero-header-sektion_image" loading="lazy" />
                 </div>
                 <div class="startseite_hero-header-sektion_image-wrapper is-quote">
                   <div class="zitat--content">
@@ -275,13 +276,13 @@ const galleryImages = [
                   </div>
                 </div>
                 <div class="startseite_hero-header-sektion_image-wrapper">
-                  <img src="/images/68f5d97d8687f0e787a79958_Vavrova-Photography-14.avif" alt="Kindergartenfoto" class="startseite_hero-header-sektion_image" loading="lazy" />
+                  <Photo src="68f5d97d8687f0e787a79958_Vavrova-Photography-14.avif" alt="Kindergartenfoto eines lachenden Kindes in Göppingen" class="startseite_hero-header-sektion_image" loading="lazy" />
                 </div>
                 <div class="startseite_hero-header-sektion_image-wrapper">
-                  <img src="/images/68f5da4bb82fb75b0cb7208a_Vavrova-Photography-72-von-284.avif" alt="Kindergartenfoto" class="startseite_hero-header-sektion_image" loading="lazy" />
+                  <Photo src="68f5da4bb82fb75b0cb7208a_Vavrova-Photography-72-von-284.avif" alt="Fröhliches Kind beim Kindergarten-Fototag in Göppingen" class="startseite_hero-header-sektion_image" loading="lazy" />
                 </div>
                 <div class="startseite_hero-header-sektion_image-wrapper">
-                  <img src="/images/68f5d97e8161d2b06032b8f3_Vavrova_Photography-190.avif" alt="Kindergartenfoto" class="startseite_hero-header-sektion_image" loading="lazy" />
+                  <Photo src="68f5d97e8161d2b06032b8f3_Vavrova_Photography-190.avif" alt="Kindergartenfotografie – natürliches Porträt eines Kindes" class="startseite_hero-header-sektion_image" loading="lazy" />
                 </div>
               </div>
             ))}
@@ -300,19 +301,19 @@ const galleryImages = [
                   </div>
                 </div>
                 <div class="startseite_hero-header-sektion_image-wrapper">
-                  <img src="/images/68f5d97d08d480a975186c24_Vavrova-Photography-67-von-284.avif" alt="Kindergartenfoto" class="startseite_hero-header-sektion_image" loading="lazy" />
+                  <Photo src="68f5d97d08d480a975186c24_Vavrova-Photography-67-von-284.avif" alt="Kinderfoto beim Kindergarten-Fototag im Raum Göppingen" class="startseite_hero-header-sektion_image" loading="lazy" />
                 </div>
                 <div class="startseite_hero-header-sektion_image-wrapper">
-                  <img src="/images/68f5d97b5070371cf5420f98_Vavrova_Photography-193.avif" alt="Kindergartenfoto" class="startseite_hero-header-sektion_image" loading="lazy" />
+                  <Photo src="68f5d97b5070371cf5420f98_Vavrova_Photography-193.avif" alt="Kindergartenfotografie Göppingen – Kinderporträt beim Fototag" class="startseite_hero-header-sektion_image" loading="lazy" />
                 </div>
                 <div class="startseite_hero-header-sektion_image-wrapper">
-                  <img src="/images/68f5d97b3968f7e36a1e0dd4_Vavrova-Photography-16.avif" alt="Kindergartenfoto" class="startseite_hero-header-sektion_image" loading="lazy" />
+                  <Photo src="68f5d97b3968f7e36a1e0dd4_Vavrova-Photography-16.avif" alt="Natürliches Kindergartenfoto – Fotografin für Kitas in Göppingen" class="startseite_hero-header-sektion_image" loading="lazy" />
                 </div>
                 <div class="startseite_hero-header-sektion_image-wrapper">
-                  <img src="/images/68f68f4a2cb959ad0eeeaa3b_Vavrova-Photography-6-von-132.avif" alt="Kindergartenfoto" class="startseite_hero-header-sektion_image" loading="lazy" />
+                  <Photo src="68f68f4a2cb959ad0eeeaa3b_Vavrova-Photography-6-von-132.avif" alt="Kindergartenfotografie im Michaelis Kindergarten Göppingen" class="startseite_hero-header-sektion_image" loading="lazy" />
                 </div>
                 <div class="startseite_hero-header-sektion_image-wrapper">
-                  <img src="/images/68f5d97939e52d48a09e9e31_Vavrova-Photography-86-von-452.avif" alt="Kindergartenfoto" class="startseite_hero-header-sektion_image" loading="lazy" />
+                  <Photo src="68f5d97939e52d48a09e9e31_Vavrova-Photography-86-von-452.avif" alt="Kinderfotografie – Kind beim Fototag in der Kita" class="startseite_hero-header-sektion_image" loading="lazy" />
                 </div>
               </div>
             ))}
@@ -349,7 +350,7 @@ const galleryImages = [
                 <a href="/kindergartenfotografie" class="button is-link">{t.angebot.kita.button}</a>
               </div>
               <div class="startseite_vorteile-sektion_image-wrapper">
-                <img src="/images/68f68f4a2cb959ad0eeeaa3b_Vavrova-Photography-6-von-132.avif" alt="Kindergartenfotografie" class="startseite_vorteile-sektion_image" loading="lazy" />
+                <Photo src="68f68f4a2cb959ad0eeeaa3b_Vavrova-Photography-6-von-132.avif" alt="Kindergartenfotografie in Göppingen – Kind beim Fototag in der Kita" class="startseite_vorteile-sektion_image" loading="lazy" />
               </div>
             </div>
           </div>
@@ -362,7 +363,7 @@ const galleryImages = [
               <a href="/schulfotografie" class="button is-link">{t.angebot.schule.button}</a>
             </div>
             <div class="startseite_vorteile-sektion_image-wrapper">
-              <img src="/images/68fdf8f5e79a1b8bcd591a8e_PHOTO-2025-10-22-10-27-56-3.avif" alt="Schulfotografie" class="startseite_vorteile-sektion_image" loading="lazy" />
+              <Photo src="68fdf8f5e79a1b8bcd591a8e_PHOTO-2025-10-22-10-27-56-3.avif" alt="Schulfotografie in Göppingen – Grundschulkind beim Fototag" class="startseite_vorteile-sektion_image" loading="lazy" />
             </div>
           </div>
         </div>
@@ -425,7 +426,7 @@ const galleryImages = [
           {galleryImages.map((img, i) => (
             <div class="polaroid scroll-reveal" style={`--rotate: ${[-2,-1,1.5,-1.5,2,-0.5,1,-2,1.5][i % 9]}deg`}>
               <div class="polaroid-photo">
-                <img src={`/images/${img.src}`} alt={img.alt} loading="lazy" />
+                <Photo src={img.src} alt={img.alt} loading="lazy" />
               </div>
               <p class="polaroid-label">{img.location}</p>
             </div>
@@ -556,7 +557,7 @@ const galleryImages = [
   <section class="section_cta27">
     <div class="cta27_component">
       <div class="cta27_background-image-wrapper">
-        <img src="/images/68f5d97d08d480a975186c24_Vavrova-Photography-67-von-284.avif" alt="" class="cta27_bg-image" loading="lazy" />
+        <Photo src="68f5d97d08d480a975186c24_Vavrova-Photography-67-von-284.avif" alt="" class="cta27_bg-image" loading="lazy" />
         <div class="cta27_overlay"></div>
       </div>
       <div class="cta27_content">
